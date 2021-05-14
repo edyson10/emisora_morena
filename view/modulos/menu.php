@@ -23,7 +23,7 @@
                             </li>
                             <li class="nav-item green-highlight">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Testimonio">Testimonials </a>
+                                <a class="nav-link" href="Galeria">Galeria </a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -44,7 +44,7 @@
                             </li>
                             <li class="nav-item green-highlight">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Testimonio">Testimonials</a>
+                                <a class="nav-link" href="Galeria">Galeria</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -65,13 +65,13 @@
                             </li>
                             <li class="nav-item green-highlight">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Testimonio">Testimonials</a>
+                                <a class="nav-link" href="Galeria">Galeria</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Contacto">Contact</a>
                             </li>
-                        <?php } else if ($_GET["ubicacion"] == "Testimonio") { ?>
+                        <?php } else if ($_GET["ubicacion"] == "Galeria") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Inicio">Home</a>
@@ -86,7 +86,7 @@
                             </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Testimonio">Testimonials <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="Galeria">Galeria <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -107,7 +107,7 @@
                             </li>
                             <li class="nav-item green-highlight">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Testimonio">Testimonials</a>
+                                <a class="nav-link" href="Galeria">Galeria</a>
                             </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>

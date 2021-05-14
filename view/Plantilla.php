@@ -2,7 +2,7 @@
 if (isset($_GET["ubicacion"])) {
     if (
         $_GET["ubicacion"] == "Inicio" || $_GET["ubicacion"] == "Acerca" || $_GET["ubicacion"] == "Contacto"
-        || $_GET["ubicacion"] == "Servicio" || $_GET["ubicacion"] == "Testimonio"
+        || $_GET["ubicacion"] == "Servicio" || $_GET["ubicacion"] == "Galeria"
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">
