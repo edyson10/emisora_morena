@@ -1,14 +1,10 @@
 <body id="servicesPage">
-  <div class="parallax-window" data-parallax="scroll" data-image-src="view/presentacion/img/bg-01.jpg">
+  <div class="parallax-window" data-parallax="scroll" data-image-src="view/presentacion/img/3.jpg">
     <div class="container-fluid">
       <div class="row tm-brand-row">
         <div class="col-lg-4 col-11">
           <div class="tm-brand-container tm-bg-white-transparent">
-            <i class="fas fa-2x fa-pen tm-brand-icon"></i>
-            <div class="tm-brand-texts">
-              <h1 class="text-uppercase tm-brand-name">Parallo</h1>
-              <p class="small">new app landing page</p>
-            </div>
+            <img src="view/presentacion/img/logoemisora.png" width="300" height="200">
           </div>
         </div>
         <?php include "view/modulos/menu.php"; ?>
