@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET["ubicacion"])) {
     if (
-        $_GET["ubicacion"] == "Inicio" || $_GET["ubicacion"] == "sobreNosotros" || $_GET["ubicacion"] == "Contactanos"
+        $_GET["ubicacion"] == "Inicio" || $_GET["ubicacion"] == "Nosotros" || $_GET["ubicacion"] == "Contactanos"
         || $_GET["ubicacion"] == "Documentos" || $_GET["ubicacion"] == "Galeria"
     ) { ?>
         <!DOCTYPE html>
@@ -18,6 +18,8 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" href="view/presentacion/css/templatemo-style.css" />
             <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick.css" />
             <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick-theme.css" />
+            <!-- =========== Sweetalert2 ============ -->
+            <link rel="stylesheet" type="text/css" href="view/presentacion/css/sweetalert2.min.css" />
         </head>
 
         <?php
@@ -29,6 +31,10 @@ if (isset($_GET["ubicacion"])) {
         <script src="view/presentacion/js/bootstrap.min.js"></script>
         <script src="view/presentacion/slick/slick.min.js"></script>
 
+        <script src="view/presentacion/js/alertas.js"></script>
+        <script src="view/presentacion/js/sweetalert2.min.js"></script>
+        <script src="view/presentacion/js/correo.js"></script>
+        
         <script>
             $(function() {
                 $('.tabgroup > div').hide();

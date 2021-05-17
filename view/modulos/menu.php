@@ -15,7 +15,7 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="sobreNosotros">Sobre Nosotros</a>
+                                <a class="nav-link" href="Nosotros">Nosotros</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -29,14 +29,14 @@
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Contactanos">Contáctanos</a>
                             </li>
-                        <?php } else if ($_GET["ubicacion"] == "sobreNosotros") { ?>
+                        <?php } else if ($_GET["ubicacion"] == "Nosotros") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Inicio">Home</a>
+                                <a class="nav-link" href="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="sobreNosotros">Sobre Nosotros <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="Nosotros">Nosotros <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -53,11 +53,11 @@
                         <?php } else if ($_GET["ubicacion"] == "Documentos") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Inicio">Home</a>
+                                <a class="nav-link" href="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="sobreNosotros">Sobre Nosotros</a>
+                                <a class="nav-link" href="Nosotros">Nosotros</a>
                             </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
@@ -74,11 +74,11 @@
                         <?php } else if ($_GET["ubicacion"] == "Galeria") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Inicio">Home</a>
+                                <a class="nav-link" href="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="sobreNosotros">Sobre Nosotros</a>
+                                <a class="nav-link" href="Nosotros">Nosotros</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -95,11 +95,11 @@
                         <?php } else if ($_GET["ubicacion"] == "Contactanos") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Inicio">Home</a>
+                                <a class="nav-link" href="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="sobreNosotros">Sobre Nosotros</a>
+                                <a class="nav-link" href="Nosotros">Nosotros</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>

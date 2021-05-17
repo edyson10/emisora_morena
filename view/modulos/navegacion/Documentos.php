@@ -105,6 +105,7 @@
           </div>
         </div>
       </section>
+      <?php include "view/modulos/footer.php";?>
     </div>
     <!-- .container-fluid -->
   </div>  
