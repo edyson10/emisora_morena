@@ -94,7 +94,7 @@
                         </form>
                         <button type="submit" class="btn btn-secondary">Enviar</button>
                     </div>
-                    <img src="view/presentacion/img/13.jpg" width="400" height="400" />
+                    <img src="view/presentacion/img/18.jpeg" width="400" height="400" />
                 </div>
             </section>
         </div>

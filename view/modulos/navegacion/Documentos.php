@@ -13,97 +13,68 @@
       <!-- Services header -->
       <section class="row" id="tmServices">
         <div class="col-12">
-          <div class="parallax-window tm-services-parallax-header" data-parallax="scroll" data-z-index="101" data-image-src="view/presentacion/img/coffee-glass.jpg">
-
-            <div class="tm-bg-black-transparent text-center tm-services-header">
-              <h2 class="text-uppercase tm-services-page-title">Our Services</h2>
-              <p class="tm-services-description mb-0 small">
-                This is a parallax movement background image "coffee glass". <br>
-                Aliquam egestas lectus semper enim malesuada, in convallis nunc sagittis.<br>
-                Pellentesque quis tellus vel tortor malesuada egestas.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12">
-          <div class="tm-bg-black-transparent tm-services-detail-box">
-            <p>
-              Aenean convallis justo purus, id pulvinar enim finibus vitae. Fusce et bibendum nisi, vitae mollis turpis. Aliquam tellus mi, maximus vel orci
-              imperdiet, convallis cursus tortor. Donec sollicitudin metus sit amet nisl rhoncus, id ultrices risus interdum. Proin mollis nulla nulla, ac cursus enim ornare a. Cras quis porta lectus. Pellentesque eu ultrices arcu. Proin ac tristique dui. Praesent mi odio, aliquam ac leo sit amet, dictum sodales diam.
-            </p>
-            <p>
-              Quisque commodo, orci eget suscipit vestibulum, metus orci fringilla urna, eget dignissim justo odio sit amet tellus. Morbi dapibus molestie
-              massa nec congue. Etiam lacinia pretium psuere. Integer sodales porttitor lobortis. Nam vestibulum vestibulum lectus non pulvinar.
-              Vivamus eget sapien vitae magna lobortis rhoncus molestie sit amet est. Fusce ultrices justo vitae blandit consequat.
-            </p>
-          </div>
-        </div>
-
-        <div class="col-12 tm-tabs-container">
-          <div class="tm-tab-links">
-            <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-              <li><a href="#tab1" class="active">
-                  <div class="icon-wrap"><i class="fas fa-2x fa-leaf"></i></div>
-                  Service Tab One
-                </a></li>
-              <li><a href="#tab2" class="">
-                  <div class="icon-wrap"><i class="fab fa-2x fa-canadian-maple-leaf"></i></div>
-                  Service Tab Two
-                </a></li>
-              <li><a href="#tab3" class="">
-                  <div class="icon-wrap"><i class="fab fa-2x fa-pagelines"></i></div>
-                  Service Tab Three
-                </a></li>
-            </ul>
-          </div>
-          <div class="tm-tab-contents">
-            <div id="first-tab-group" class="tabgroup">
-              <div id="tab1">
-                <div class="text-content">
-                  <h3 class="tm-service-tab-title">Service Tab One</h3>
-                  <p class="tm-service-tab-p">Etiam egestas metus vitae est interdum, in eleifend nunc volutpat. Aliquam molestie
-                    ipsum quis suscipit lacinia. Mauris turpis libero, iaculis non dictum ac, ornare a massa.
-                    Duis id lorem purus. Fusce viverra ullamcorper metus. Curabitur puvinar suscipit sapien
-                    ac blandit. Aliquam vel pulvinar purus, sit amet luctus urna.
-                  </p>
-                  <p class="mb-0">
-                    Nam consequat, leo vitae aliquet dignissim, leo est laoreet nibh, nec dictum libero justo
-                    vitae dolor. Donec tristique eros at nisi elementum efficitur. Proin ornare feugiat ex placerat pellenteqsue. Nulla convallis est volutpat ex ultrices facilisis.
-                  </p>
-                </div>
-              </div>
-              <div id="tab2">
-                <div class="text-content">
-                  <h3 class="tm-service-tab-title">Service Tab Two</h3>
-                  <p class="tm-service-tab-p">Nam consequat, leo vitae aliquet dignissim, leo est laoreet nibh, nec dictum libero justo
-                    vitae dolor. Donec tristique eros at nisi elementum efficitur. Proin ornare feugiat ex placerat pellenteqsue. Nulla convallis est volutpat ex ultrices facilisis.
-                  </p>
-                  <p class="mb-0">
-                    Etiam egestas metus vitae est interdum, in eleifend nunc volutpat. Aliquam molestie
-                    ipsum quis suscipit lacinia. Mauris turpis libero, iaculis non dictum ac, ornare a massa.
-                    Duis id lorem purus. Fusce viverra ullamcorper metus. Curabitur puvinar suscipit sapien
-                    ac blandit. Aliquam vel pulvinar purus, sit amet luctus urna.
-                  </p>
-                </div>
-              </div>
-              <div id="tab3">
-                <div class="text-content">
-                  <h3 class="tm-service-tab-title">Service Tab Three</h3>
-                  <p class="tm-service-tab-p">Mauris turpis libero, iaculis non dictum ac, ornare a massa.
-                    Duis id lorem purus. Fusce viverra ullamcorper metus. Curabitur puvinar suscipit sapien
-                    ac blandit. Aliquam vel pulvinar purus, sit amet luctus urna. Nulla convallis est volutpat ex ultrices facilisis.
-                  </p>
-                  <p class="mb-0">
-                    Etiam egestas metus vitae est interdum, in eleifend nunc volutpat. Aliquam molestie
-                    ipsum quis suscipit lacinia. Nam consequat, leo vitae aliquet dignissim, leo est laoreet nibh, nec dictum libero justo
-                    vitae dolor. Donec tristique eros at nisi elementum efficitur. Proin ornare feugiat ex placerat pellenteqsue.
-                  </p>
-                </div>
+            <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header" data-parallax="scroll" data-z-index="101" data-image-src="view/presentacion/img/14.jpg">
+              <div class="tm-bg-black-transparent text-center tm-services-header tm-testimonials-header">
+                  <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">EMISORA MORENA ESTEREO</h2>
+                  <p class="tm-services-description mb-0 small">Labateca, Norte de Santander</p>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="col-lg-12 tm-contact-col-right">
+              <div class="tm-bg-white-transparent tm-contact-text">
+                  <h3 class="tm-service-tab-title">DOCUMENTOS IMPORTANTES</h3>
+                  <div id="list-example" class="list-group">
+                      <table class="table">
+                          <thead class="table-primary">
+                              <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col" style="width:850px">Nombre</th>
+                                  <th scope="col" style="width:50px">Opciones</th>
+                              </tr>
+                          </thead>
+                          <tbody class="table-light">
+                              <tr>
+                                  <th scope="row">1</th>
+                                  <td>Documento 1</td>
+                                  <td><button type="button" class="btn btn-success">Descargar</button></td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">2</th>
+                                  <td>Documento 2</td>
+                                  <td><button type="button" class="btn btn-success">Descargar</button></td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">3</th>
+                                  <td>Documento 3</td>
+                                  <td><button type="button" class="btn btn-success">Descargar</button></td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">4</th>
+                                  <td>Documento 4</td>
+                                  <td><button type="button" class="btn btn-success">Descargar</button></td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">5</th>
+                                  <td>Documento 5</td>
+                                  <td><button type="button" class="btn btn-success">Descargar</button></td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">6</th>
+                                  <td>Documento 6</td>
+                                  <td><button type="button" class="btn btn-success">Descargar</button></td>
+                              </tr>
+                              <tr>
+                                  <th scope="row">7</th>
+                                  <td>Documento 7</td>
+                                  <td><button type="button" class="btn btn-success">Descargar</button></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+              </div>
+          </div>
       </section>
     </div>
     <!-- .container-fluid -->

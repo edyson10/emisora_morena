@@ -32,7 +32,7 @@
                         <?php } else if ($_GET["ubicacion"] == "sobreNosotros") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Inicio">Home</a>
+                                <a class="nav-link" href="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
@@ -53,7 +53,7 @@
                         <?php } else if ($_GET["ubicacion"] == "Documentos") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Inicio">Home</a>
+                                <a class="nav-link" href="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -74,7 +74,7 @@
                         <?php } else if ($_GET["ubicacion"] == "Galeria") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Inicio">Home</a>
+                                <a class="nav-link" href="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -95,7 +95,7 @@
                         <?php } else if ($_GET["ubicacion"] == "Contactanos") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Inicio">Home</a>
+                                <a class="nav-link" href="Inicio">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
