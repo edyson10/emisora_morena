@@ -102,15 +102,17 @@ if (isset($_GET["ubicacion"])) {
 
         </html>
     <?php } else if ($_GET["ubicacion"] == "Privado") {
+        include_once 'model/conexion.php';
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
-    } else if ($_GET["ubicacion"] == "Administracion") { ?>
+    } else if ($_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Ver-personal"
+        || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Rol") { ?>
         <!DOCTYPE html>
         <html lang="en">
 
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>AdminLTE 3 | Dashboard</title>
+            <title>EMS 98.2 | Dashboard</title>
 
             <!-- Google Font: Source Sans Pro -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -132,16 +134,67 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" href="view/presentacion/admin/plugins/daterangepicker/daterangepicker.css">
             <!-- summernote -->
             <link rel="stylesheet" href="view/presentacion/admin/plugins/summernote/summernote-bs4.min.css">
+            <!-- =========== Sweetalert2 ============ -->
+            <link rel="stylesheet" type="text/css" href="view/presentacion/css/sweetalert2.min.css" />
         </head>
 
         <body class="hold-transition sidebar-mini layout-fixed">
             <div class="wrapper">
-                <?php 
-                    include_once "modulos/header.php";
-                    include_once "modulos/menuAdmin.php";
+                <?php
+                include_once 'model/conexion.php';
+                include "modulos/header.php";
+                include "modulos/menuAdmin.php";
+                include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
+                include "modulos/footerAdmin.php";
                 ?>
             </div>
+            <!-- ./wrapper -->
+            <!-- jQuery -->
+            <script src="view/presentacion/admin/plugins/jquery/jquery.min.js"></script>
+            <!-- jQuery UI 1.11.4 -->
+            <script src="view/presentacion/admin/plugins/jquery-ui/jquery-ui.min.js"></script>
+            <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+            <script>
+                $.widget.bridge('uibutton', $.ui.button)
+            </script>
+            <!-- Bootstrap 4 -->
+            <script src="view/presentacion/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <!-- ChartJS -->
+            <script src="view/presentacion/admin/plugins/chart.js/Chart.min.js"></script>
+            <!-- Sparkline -->
+            <script src="view/presentacion/admin/plugins/sparklines/sparkline.js"></script>
+            <!-- JQVMap -->
+            <script src="view/presentacion/admin/plugins/jqvmap/jquery.vmap.min.js"></script>
+            <script src="view/presentacion/admin/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+            <!-- jQuery Knob Chart -->
+            <script src="view/presentacion/admin/plugins/jquery-knob/jquery.knob.min.js"></script>
+            <!-- daterangepicker -->
+            <script src="view/presentacion/admin/plugins/moment/moment.min.js"></script>
+            <script src="view/presentacion/admin/plugins/daterangepicker/daterangepicker.js"></script>
+            <!-- Tempusdominus Bootstrap 4 -->
+            <script src="view/presentacion/admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+            <!-- Summernote -->
+            <script src="view/presentacion/admin/plugins/summernote/summernote-bs4.min.js"></script>
+            <!-- overlayScrollbars -->
+            <script src="view/presentacion/admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+            <!-- AdminLTE App -->
+            <script src="view/presentacion/admin/dist/js/adminlte.js"></script>
+            <!-- AdminLTE for demo purposes -->
+            <script src="view/presentacion/admin/dist/js/demo.js"></script>
+            <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+            <script src="view/presentacion/admin/dist/js/pages/dashboard.js"></script>
+            <!-- jquery-validation -->
+            <script src="view/presentacion/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
+            <script src="view/presentacion/admin/plugins/jquery-validation/additional-methods.min.js"></script>
+
+            <script src="view/presentacion/js/alertas.js"></script>
+            <script src="view/presentacion/js/sweetalert2.min.js"></script>
+
+            <script src="view/presentacion/js/registrar.js"></script>
+            <script src="view/presentacion/js/eliminar.js"></script>
         </body>
+
+        </html>
 <?php } else {
         header('location: Inicio');
     }
