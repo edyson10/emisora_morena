@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-08-2021 a las 07:35:29
+-- Tiempo de generación: 06-08-2021 a las 01:27:44
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -35,6 +35,18 @@ CREATE TABLE `contacto` (
   `asunto` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `mensaje` varchar(200) COLLATE utf8_spanish2_ci NOT NULL,
   `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `documentacion`
+--
+
+CREATE TABLE `documentacion` (
+  `id` int(11) NOT NULL,
+  `titulo` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `ruta_documento` varchar(400) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 -- --------------------------------------------------------
@@ -79,7 +91,8 @@ CREATE TABLE `persona` (
 --
 
 INSERT INTO `persona` (`id`, `nombre`, `apellido`, `tipo_documento`, `documento`, `correo`, `contrasena`, `rol`, `imagen`, `ruta_imagen`, `fecha_inicio`, `fecha_fin`, `estado`) VALUES
-(1, 'edyson', 'leal', 1, '1234', 'edyson@gmail.com', '1234', 1, NULL, NULL, '2021-08-01', NULL, 1);
+(1, 'edyson', 'leal', 1, '1234', 'edyson@gmail.com', '1234', 1, NULL, NULL, '2021-08-01', NULL, 1),
+(2, 'fabian', 'marin', 1, '123456', 'matias@gmail.com', '123456', 2, NULL, NULL, '2021-08-04', NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -124,7 +137,7 @@ INSERT INTO `rol` (`id`, `descripcion`) VALUES
 CREATE TABLE `sesion` (
   `id` int(11) NOT NULL,
   `identificacion` varchar(20) COLLATE utf8_spanish2_ci NOT NULL,
-  `fecha` date NOT NULL,
+  `fecha` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `ip` varchar(20) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -133,8 +146,13 @@ CREATE TABLE `sesion` (
 --
 
 INSERT INTO `sesion` (`id`, `identificacion`, `fecha`, `ip`) VALUES
-(1, '1234', '2021-08-02', '192.0.0.1.1'),
-(2, '1234', '2021-08-03', '::1');
+(6, '1234', '2021-08-03 17:19:11', '::1'),
+(7, '1234', '2021-08-03 17:25:45', '::1'),
+(8, '1234', '2021-08-04 20:43:49', '::1'),
+(9, '1234', '2021-08-05 18:52:38', '::1'),
+(10, '1234', '2021-08-05 18:54:39', '::1'),
+(11, '1234', '2021-08-05 18:55:44', '::1'),
+(12, '1234', '2021-08-05 19:06:53', '::1');
 
 -- --------------------------------------------------------
 
@@ -243,7 +261,7 @@ ALTER TABLE `noticia`
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `pqrs`
@@ -255,13 +273,13 @@ ALTER TABLE `pqrs`
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `sesion`
 --
 ALTER TABLE `sesion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_documento`

@@ -9,6 +9,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="Administracion">Inicio</a></li>
+                        <li class="breadcrumb-item active">Ver personal</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -41,7 +42,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = $conexion->query("SELECT * FROM persona where estado = '1' ORDER BY documento ASC");
+                                    $query = $conexion->query("SELECT * FROM persona ORDER BY documento, estado ASC");
                                     while ($row = mysqli_fetch_array($query)) {
                                         if (isset($row['imagen'])) {
                                             //$imagen = "model/Archivos/imagenes/personal/" . $row['imagen'];
@@ -53,6 +54,12 @@
                                             $estado = "<span class='badge badge-success'>Activo</span>";
                                         } else {
                                             $estado = "<span class='badge badge-danger'>Inactivo</span>";
+                                        }
+
+                                        if ($row["estado"] == '1') {
+                                            $botones = "<a class='btn btn-danger' onclick='eliminarPersona(" . $row["id"] . ")'><i class='fas fa-trash'></i></a>";
+                                        } else {
+                                            $botones = "";
                                         }
                                         echo "<tr>
                                             <td>
@@ -67,9 +74,7 @@
                                             <td>" . $row["rol"] . "</td>
                                             <td>" . $estado . "</td>
                                             <td class='text-center py-0 align-middle'>
-                                                <div class='btn-group btn-group-sm'>
-                                                    <a class='btn btn-danger' onclick='eliminarPersonal(" . $row["documento"] . ")'><i class='fas fa-trash'></i></a>
-                                                </div>
+                                                <div class='btn-group btn-group-sm'>" . $botones . "</div>
                                             </td>
                                         </tr>";
                                     }

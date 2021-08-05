@@ -14,7 +14,7 @@
                 <img src="view/presentacion/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"><?php echo "Edyson Leal"; ?></a>
+                <a href="#" class="d-block"><?php echo $_SESSION['nombre'] . " " . $_SESSION['apellido']; ?></a>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
+                        <i class="nav-icon fas fa-edit"></i>
                         <p>
                             Noticias
                             <i class="fas fa-angle-left right"></i>
@@ -54,13 +54,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="pages/UI/general.html" class="nav-link">
+                            <a href="Registrar-noticia" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Registrar noticia</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="pages/UI/icons.html" class="nav-link">
+                            <a href="Ver-noticia" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Ver noticia</p>
                             </a>
@@ -69,9 +69,17 @@
                 </li>
                 <li class="nav-item">
                     <a href="pages/kanban.html" class="nav-link">
-                        <i class="nav-icon fas fa-columns"></i>
+                        <i class="nav-icon fas fa-calendar-check"></i>
                         <p>
                             Contacto
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="Documentacion" class="nav-link">
+                        <i class="nav-icon fas fa-folder"></i>
+                        <p>
+                            Documentos
                         </p>
                     </a>
                 </li>
@@ -85,15 +93,15 @@
                 </li>
                 <li class="nav-item">
                     <a href="Rol" class="nav-link">
-                        <i class="nav-icon fas fa-columns"></i>
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Rol
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="pages/kanban.html" class="nav-link">
-                        <i class="nav-icon fas fa-columns"></i>
+                    <a href="Sesion" class="nav-link">
+                        <i class="nav-icon fas fa-lock"></i>
                         <p>
                             Sesiones
                         </p>

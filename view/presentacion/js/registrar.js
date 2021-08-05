@@ -133,3 +133,82 @@ $(document).ready(function () {
     },
   });
 });
+
+/*
+METODO PARA REGISTRAR NOTICIA
+*/
+$(document).ready(function () {
+  $("#FormRegistroNoticia").on("submit", function (e) {
+    e.preventDefault();
+    $("#FormRegistroNoticia").validate({
+      rules: {
+        descripcionNoticia: { required: true },
+        lugarNoticia: { required: true },
+        fechaNoticia: { required: true, date: true }
+      },
+      messages: {
+        descripcionNoticia: { required: "Debe de completar los campos." },
+        lugarNoticia: { required: "Debe de completar los campos." },
+        fechaNoticia: {
+          required: "Debe de completar los campos.",
+          date: "Seleccione una fecha correcta.",
+        }
+      },
+      errorElement: "span",
+      errorPlacement: function (error, element) {
+        error.addClass("invalid-feedback");
+        element.closest(".form-group").append(error);
+      },
+      highlight: function (element, errorClass, validClass) {
+        $(element).addClass("is-invalid");
+      },
+      unhighlight: function (element, errorClass, validClass) {
+        $(element).removeClass("is-invalid");
+      },
+    });
+    var datos = new FormData(this);
+    if (document.getElementById("fotoNoticia").files.length == 0) {
+      respuestaError("Error!", "Debe de cargar un foto!");
+    } else {
+      $.ajax({
+        url: "model/registrarNoticia.php",
+        data: datos,
+        type: "post",
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        async: true,
+        cache: false,
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          //console.log(data)
+          //var resultado = JSON.parse(data);
+          //console.log('->' + resultado.respuesta);
+          if (data.respuesta == "exito") {
+            ingresoExitoso(
+              "¡Exito!",
+              "Se ha registrado correctamente la noticia."
+            );
+            setTimeout(function () {
+              window.location.href = "Ver-noticia";
+            }, 1000);
+          } else if (data.respuesta == "error") {
+            respuestaError(
+              "Error!",
+              "Ocurrio un error al registrar la noticia"
+            );
+          } else if (data.respuesta == "noformato") {
+            respuestaError(
+              "Error!",
+              "Debe de elegir una foto con extensión .jpg, .jpeg, .png."
+            );
+          } else if (data.respuesta == "notamano") {
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 2MB.");
+          }
+        },
+      });
+    }
+  });
+});

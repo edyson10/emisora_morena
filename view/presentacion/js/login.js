@@ -1,6 +1,3 @@
-/*
-METODO PARA REGISTRAR RUTAS
-*/
 $(document).ready(function () {
   $("#FormLogin").validate({
     rules: {
@@ -41,8 +38,25 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
-          console.log(data);
-          
+          if (data.respuesta == "exito") {
+            ingresoExitoso(
+              "¡Inicio Sesión!",
+              "Bienvenido(a) a Emisora Morena Stereo"
+            );
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          } else if (data.respuesta == "error") {
+            respuestaError(
+              "¡Error!",
+              "Usuario, contraseña y/ o rol incorrectos"
+            );
+          } else if (data.respuesta == "estado") {
+            respuestaError(
+              "¡Error!",
+              "No tiene permiso para ingresar a la plataforma"
+            );
+          }
         },
       });
     },

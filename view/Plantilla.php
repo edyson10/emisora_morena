@@ -105,7 +105,8 @@ if (isset($_GET["ubicacion"])) {
         include_once 'model/conexion.php';
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if ($_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Ver-personal"
-        || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Rol") { ?>
+        || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Ver-noticia"
+        || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Documentacion") { ?>
         <!DOCTYPE html>
         <html lang="en">
 
@@ -142,8 +143,12 @@ if (isset($_GET["ubicacion"])) {
             <div class="wrapper">
                 <?php
                 include_once 'model/conexion.php';
+                session_start();
                 include "modulos/header.php";
                 include "modulos/menuAdmin.php";
+                if (empty($_SESSION['rol'])) {
+                    header("Location: Privado");
+                }
                 include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
                 include "modulos/footerAdmin.php";
                 ?>

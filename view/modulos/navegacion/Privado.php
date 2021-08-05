@@ -1,10 +1,17 @@
+<?php 
+session_start();
+if (isset($_SESSION['rol'])) {
+    header('Location: Administracion');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Emisora Morena Stero</title>
+    <title>Login EMS 98.2</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -14,6 +21,8 @@
     <link rel="stylesheet" href="view/presentacion/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="view/presentacion/admin/dist/css/adminlte.min.css">
+    <!-- =========== Sweetalert2 ============ -->
+    <link rel="stylesheet" type="text/css" href="view/presentacion/css/sweetalert2.min.css" />
 </head>
 
 <body class="hold-transition login-page">
@@ -60,19 +69,16 @@
                     <div class="row">
                         <div class="col-6">
                             <button type="submit" class="btn btn-primary btn-block">Iniciar sesi&oacute;n</button>
-                            <!--<a type="submit" href="Administracion" class="btn btn-primary btn-block">Iniciar sesi&oacute;n</a>-->
                         </div>
                         <!-- /.col -->
-                        <div class="col-6">
-
-                        </div>
+                        <div class="col-6"></div>
                         <!-- /.col -->
                     </div>
                 </form>
                 <!-- /.social-auth-links -->
                 <br>
                 <p class="mb-1">
-                    <a href="forgot-password.html">¿Olvidaste su contraseña?</a>
+                    <a href="">¿Olvidaste su contraseña?</a>
                 </p>
             </div>
             <!-- /.card-body -->
@@ -87,6 +93,14 @@
     <script src="view/presentacion/admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="view/presentacion/admin/dist/js/adminlte.min.js"></script>
+
+    <script src="view/presentacion/js/alertas.js"></script>
+    <script src="view/presentacion/js/sweetalert2.min.js"></script>
+    <!-- jquery-validation -->
+    <script src="view/presentacion/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="view/presentacion/admin/plugins/jquery-validation/additional-methods.min.js"></script>
+
+    <script src="view/presentacion/js/login.js"></script>
 </body>
 
 </html>
