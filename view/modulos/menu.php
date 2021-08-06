@@ -9,7 +9,7 @@
                     <?php
                     if (isset($_GET["ubicacion"])) {
                         if ($_GET["ubicacion"] == "Inicio") { ?>
-                            <li class="nav-item active">
+                            <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Inicio">Inicio <span class="sr-only">(current)</span></a>
                             </li>
@@ -19,11 +19,11 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Documentos">Documentos</a>
+                                <a class="nav-link" href="PQRS">PQRS</a>
                             </li>
-                            <li class="nav-item green-highlight">
+                            <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Galeria">Galeria </a>
+                                <a class="nav-link" href="Noticias">Noticias </a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -40,17 +40,17 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Documentos">Documentos</a>
+                                <a class="nav-link" href="PQRS">PQRS</a>
                             </li>
-                            <li class="nav-item green-highlight">
+                            <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Galeria">Galeria</a>
+                                <a class="nav-link" href="Noticias">Noticias</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Contactanos">Contáctanos</a>
                             </li>
-                        <?php } else if ($_GET["ubicacion"] == "Documentos") { ?>
+                        <?php } else if ($_GET["ubicacion"] == "PQRS") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Inicio">Inicio</a>
@@ -61,17 +61,17 @@
                             </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Documentos">Documentos <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="PQRS">PQRS <span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item green-highlight">
+                            <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Galeria">Galeria</a>
+                                <a class="nav-link" href="Noticias">Noticias</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Contactanos">Contáctanos</a>
                             </li>
-                        <?php } else if ($_GET["ubicacion"] == "Galeria") { ?>
+                        <?php } else if ($_GET["ubicacion"] == "Noticias") { ?>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Inicio">Inicio</a>
@@ -82,11 +82,11 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Documentos">Documentos</a>
+                                <a class="nav-link" href="PQRS">PQRS</a>
                             </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Galeria">Galeria <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="Noticias">Noticias <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -103,11 +103,11 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Documentos">PQRS</a>
+                                <a class="nav-link" href="PQRS">PQRS</a>
                             </li>
-                            <li class="nav-item green-highlight">
+                            <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Galeria">Galeria</a>
+                                <a class="nav-link" href="Noticias">Noticias</a>
                             </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
