@@ -103,7 +103,7 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Documentos">Documentos</a>
+                                <a class="nav-link" href="Documentos">PQRS</a>
                             </li>
                             <li class="nav-item green-highlight">
                                 <div class="tm-nav-link-highlight"></div>
