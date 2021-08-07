@@ -11,7 +11,7 @@
             </div>
             <section class="row" id="tmServices">
                 <div class="col-12">
-                    <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header" data-parallax="scroll" data-z-index="101" data-image-src="view/presentacion/img/11.jpg">
+                    <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header" data-parallax="scroll" data-z-index="101" data-image-src="view/presentacion/img/24.jpg">
                         <div class="tm-bg-black-transparent text-center tm-services-header tm-testimonials-header">
                             <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">EMISORA MORENA ESTEREO </h2>
                             <p class="tm-services-description mb-0 small">

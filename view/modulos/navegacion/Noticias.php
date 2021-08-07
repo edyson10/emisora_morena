@@ -13,10 +13,10 @@
       <!-- Testimonials header -->
       <section class="row" id="tmServices">
         <div class="col-12">
-          <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header" data-parallax="scroll" data-z-index="101" data-image-src="view/presentacion/img/ice-mountain.jpg">
+          <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header" data-parallax="scroll" data-z-index="101" data-image-src="view/presentacion/img/13.jpg">
 
             <div class="tm-bg-black-transparent text-center tm-services-header tm-testimonials-header">
-              <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">Testimonials</h2>
+              <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">NOTICIAS</h2>
               <p class="tm-services-description mb-0 small">
                 Parallax movement background page ice mountain for testimonials.
               </p>
