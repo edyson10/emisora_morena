@@ -13,13 +13,10 @@
       <!-- Testimonials header -->
       <section class="row" id="tmServices">
         <div class="col-12">
-          <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header" data-parallax="scroll" data-z-index="101" data-image-src="view/presentacion/img/people.jpg">
-
+          <div class="parallax-window tm-services-parallax-header tm-testimonials-parallax-header" data-parallax="scroll" data-z-index="101" data-image-src="view/presentacion/img/28.jpg">
             <div class="tm-bg-black-transparent text-center tm-services-header tm-testimonials-header">
               <h2 class="text-uppercase tm-services-page-title tm-testimonials-page-title">Contacto</h2>
-              <p class="tm-services-description mb-0 small">
-                Parallax movement background page "people" for contact page
-              </p>
+              <p class="tm-services-description mb-0 small">Labateca, Norte de Santander</p>
             </div>
           </div>
         </div>
@@ -27,7 +24,7 @@
 
       <section class="row tm-contact-row">
         <div class="col-lg-6 tm-contact-col-left">
-          <form method="POST" id="FormEnviarCorreo" name="FormEnviarCorreo" class="tm-bg-black-transparent tm-contact-form">
+          <form method="POST" id="FormEnviarCorreo" name="FormEnviarCorreo" class="tm-bg-white-transparent tm-contact-form">
             <div class="form-group">
               <input type="text" id="contact_name" name="contact_name" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Nombre completo">
             </div>
@@ -48,7 +45,7 @@
           </form>
         </div>
         <div class="col-lg-6 tm-contact-col-right">
-          <div class="tm-bg-black-transparent tm-contact-text">
+          <div class="tm-bg-white-transparent tm-contact-text">
 
             <i class="mx-auto mb-5 fas fa-3x fa-address-card tm-app-feature-icon"></i>
 
@@ -69,10 +66,10 @@
 
       <!-- Call to Action -->
       <section class="row tm-testimonials-cta" id="tmCallToAction">
-        <div class="col-md-12 tm-call-to-action-col">
+        <div class="col-lg-12 tm-call-to-action-col">
           <!--<img src="view/presentacion/img/call-to-action-3.jpg" alt="Image" class="img-fluid tm-call-to-action-image" />-->
           <div class="tm-bg-white tm-call-to-action-text text-center">
-            <h2 class="tm-call-to-action-title">Donde puede encontrarnos</h2>
+            <h2 class="tm-call-to-action-title">Donde puedes encontrarnos</h2>
             <p class="tm-call-to-action-description">
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15829.91903058413!2d-72.4937971!3d7.2998713!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5aaa0be098b03b47!2sEMISORA%20COMUNITARIA%20MORENA%20STEREO!5e0!3m2!1ses-419!2sco!4v1621087920719!5m2!1ses-419!2sco" width="680" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </p>
