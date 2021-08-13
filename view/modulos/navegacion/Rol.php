@@ -16,7 +16,7 @@
             </div><!-- /.row -->
             <div class="row mb-2">
                 <div class="col-sm-4">
-                    <button type="button" class="btn btn-block btn-success" data-toggle="modal" data-target="#modal-default">Registrar rol</button>
+                    <button type="button" class="btn btn-block btn-outline-primary" data-toggle="modal" data-target="#modal-default">Registrar rol</button>
                 </div>
             </div>
         </div><!-- /.container-fluid -->
@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="modal-footer justify-content-between">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
                         <button type="submit" class="btn btn-primary">Registrar</button>
                     </div>
                 </form>
@@ -58,14 +58,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card card-info">
                         <div class="card-header">
                             <h3 class="card-title">Rol registrados</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered ">
-                                <thead class="thead-dark">
+                                <thead class="bg-info">
                                     <tr>
                                         <th>ID</th>
                                         <th>Descripci&oacute;n</th>

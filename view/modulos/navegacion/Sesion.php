@@ -22,14 +22,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-header" style="background:blue;">
+                    <div class="card card-info">
+                        <div class="card-header">
                             <h3 class="card-title" >Sesiones registradas</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered ">
-                                <thead class="thead-dark">
+                                <thead class="bg-info">
                                     <tr>
                                         <th>Nombre completo</th>
                                         <th>Fecha</th>

@@ -23,19 +23,16 @@
         </div>
 
       <section class="row" id="tmHome">
-                <div class="col-12 tm-home-container">
-                    <div class="col-lg-12 tm-contact-col-right">
-                        <div class="tm-bg-white tm-contact-text"> 
-                          
-                        <div class="tm-brand-container tm-bg-white-transparent">
-                          <img src="view/presentacion/img/logoemisora.png" width="250" height="150">
-                        </div>
+        <div class="col-12 tm-home-container">
+          <div class="col-lg-12 tm-contact-col-right">
+              <div class="tm-bg-white-transparent tm-contact-text">
+                        
                         
                             <h2 class="font-weight-bold"> </h2>
-                            <h1 class="font-weight-bold">REGISTRO PQRS</h1>
+                            <h1 class="font-weight-bold" >REGISTRO PQRS</h1>
                             <h2 class="font-weight-bold"> </h2>
-                            <p class="tm-service-tab-p" style="color:#2E2E2E">
-                              Apreciado Usuario:
+                            <p class="tm-service-tab-p" style="color:#2E2E2E"><br/>
+                              Apreciado Usuario:<br/>
                               Para nosotros es muy importante contar con usted. 
                               En procura de mejorar nuestros servicios y trámites que ofrecemos 
                               a nuestros grupos de interés, hemos rediseñado nuestra página Web, a través de 
@@ -47,8 +44,8 @@
                               Los campos con <b style="color:#FF0000">*</b> son obligatorios.
                             </p>
                             <div id="list-example" class="list-group">
-                            <form>
-                              
+                      <div id="list-example" class="list-group">
+                          <form method="POST" id="FormEnviarCorreo" name="FormEnviarCorreo" class="tm-bg-white tm-contact-form" enctype="multipart/form-data">                              
                               <div class="form-group">
                                 <label for="exampleFormControlSelect1">Tipo de Solicitud<b style="color:#FF0000">*</b></label>
                                 <select class="form-control text-body" id="exampleFormControlSelect1">
@@ -60,27 +57,29 @@
                               </div>
                               <div class="form-group">
                                 <label for="exampleFormControlInput1">Nombre del solicitante<b style="color:#FF0000">*</b></label>
-                                <input type="nomSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="nomSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="nombre">
                               </div>
                               <div class="form-group">
                                 <label for="exampleFormControlInput1">Número de teléfono<b style="color:#FF0000">*</b></label>
-                                <input type="telSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="telSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="número">
                               </div>
                               <div class="form-group">
                                 <label for="exampleFormControlInput1">Correo electrónico<b style="color:#FF0000">*</b></label>
-                                <input type="emailSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="name@example.com">
+                                <input type="emailSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="Email">
                               </div>
                               <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Descripción de la solicitud<b style="color:#FF0000">*</b></label>
                                 <textarea class="form-control text-body" id="exampleFormControlTextarea1" rows="3"></textarea>
                               </div>
-                              <button type="button" class="btn btn-outline-primary">Enviar</button>
-                            </form>                            
-                            </div>                            
-                        </div>                       
-                    </div>
-                </div>
-            </section>
+                              <div class="text-right">
+                                <button type="button" class="btn btn-outline-primary">Enviar</button>
+                              </div>
+                          </form> 
+                      </div>
+              </div>
+          </div>
+        </div>
+      </section>
       <?php include "view/modulos/footer.php";?>
     </div>
     <!-- .container-fluid -->
