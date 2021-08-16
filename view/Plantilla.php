@@ -23,6 +23,7 @@ if (isset($_GET["ubicacion"])) {
         </head>
 
         <?php
+        include_once 'model/conexion.php';
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
         include_once "modulos/footer.php";
         ?>
@@ -106,7 +107,7 @@ if (isset($_GET["ubicacion"])) {
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if ($_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Ver-personal"
         || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Ver-noticia"
-        || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Documentacion") { ?>
+        || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Documentacion" || $_GET["ubicacion"] == "Programacion-dia") { ?>
         <!DOCTYPE html>
         <html lang="en">
 

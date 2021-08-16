@@ -68,6 +68,14 @@
                     </ul>
                 </li>
                 <li class="nav-item">
+                    <a href="Programacion-dia" class="nav-link">
+                        <i class="nav-icon fas fa-columns"></i>
+                        <p>
+                            Programaci&oacute;n d&iacute;a
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="pages/kanban.html" class="nav-link">
                         <i class="nav-icon fas fa-calendar-check"></i>
                         <p>

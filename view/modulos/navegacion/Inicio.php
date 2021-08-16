@@ -41,41 +41,16 @@
                                         </tr>
                                     </thead>
                                     <tbody class="table-light">
-                                        <tr>
-                                            <th scope="row">1</th>
-                                            <td>Amanecer campesino</td>
-                                            <td>6:00am</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>Colegio al día</td>
-                                            <td>8:00am</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>Eucaristía</td>
-                                            <td>9:00am</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4</th>
-                                            <td>Sobre Ruedas</td>
-                                            <td>10:00am</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5</th>
-                                            <td>Musica Colombiana</td>
-                                            <td>12:00pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">6</th>
-                                            <td>Alcaldía Comunica</td>
-                                            <td>4:00pm</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">7</th>
-                                            <td>Eucaristía</td>
-                                            <td>4:00pm</td>
-                                        </tr>
+                                        <?php
+                                        $query = $conexion->query("SELECT * FROM programacion ORDER BY fecha_hora ASC");
+                                        while ($row = mysqli_fetch_array($query)) {
+                                            echo "<tr>
+                                                <th scope='row'>" . $row["id"] . "</th>
+                                                <td>" . $row["nombre"] . "</td>
+                                                <td>" . $row["fecha_hora"] . "</td>
+                                            </tr>";
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -97,7 +72,7 @@
                     <img src="view/presentacion/img/18.jpeg" width="400" height="400" />
                 </div>
             </section>
-            <?php include "view/modulos/footer.php";?>
+            <?php include "view/modulos/footer.php"; ?>
         </div>
         <!-- .container-fluid -->
     </div>
