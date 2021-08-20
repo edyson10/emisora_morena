@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-08-2021 a las 01:27:44
+-- Tiempo de generación: 19-08-2021 a las 16:41:05
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -49,6 +49,14 @@ CREATE TABLE `documentacion` (
   `ruta_documento` varchar(400) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `documentacion`
+--
+
+INSERT INTO `documentacion` (`id`, `titulo`, `ruta_documento`) VALUES
+(1, 'Opiniones publicas', 'model/documentos/perrito'),
+(2, 'Gastos publicos', 'model/documentos/holis');
+
 -- --------------------------------------------------------
 
 --
@@ -59,10 +67,18 @@ CREATE TABLE `noticia` (
   `id` int(11) NOT NULL,
   `ruta_imagen` varchar(400) COLLATE utf8_spanish2_ci NOT NULL,
   `imagen` varchar(400) COLLATE utf8_spanish2_ci NOT NULL,
-  `descripcion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `descripcion` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL,
   `fecha` date NOT NULL,
-  `lugar` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
+  `lugar` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `link` varchar(400) COLLATE utf8_spanish2_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `noticia`
+--
+
+INSERT INTO `noticia` (`id`, `ruta_imagen`, `imagen`, `descripcion`, `fecha`, `lugar`, `link`) VALUES
+(1, 'prueba', 'prueba', 'El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.', '2021-08-16', 'Labateca', 'https://www.laopinion.com.co/entretenimiento/en-labateca-se-rueda-el-cortometraje-antes-de-morir?platform=hootsuite');
 
 -- --------------------------------------------------------
 
@@ -112,6 +128,25 @@ CREATE TABLE `pqrs` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `programacion`
+--
+
+CREATE TABLE `programacion` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha_hora` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `programacion`
+--
+
+INSERT INTO `programacion` (`id`, `nombre`, `fecha_hora`) VALUES
+(1, 'Amanecer campesino', '2021-08-16 06:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `rol`
 --
 
@@ -152,7 +187,8 @@ INSERT INTO `sesion` (`id`, `identificacion`, `fecha`, `ip`) VALUES
 (9, '1234', '2021-08-05 18:52:38', '::1'),
 (10, '1234', '2021-08-05 18:54:39', '::1'),
 (11, '1234', '2021-08-05 18:55:44', '::1'),
-(12, '1234', '2021-08-05 19:06:53', '::1');
+(12, '1234', '2021-08-05 19:06:53', '::1'),
+(13, '1234', '2021-08-16 19:09:28', '::1');
 
 -- --------------------------------------------------------
 
@@ -185,6 +221,16 @@ CREATE TABLE `tipo_pqrs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
 --
+-- Volcado de datos para la tabla `tipo_pqrs`
+--
+
+INSERT INTO `tipo_pqrs` (`id`, `descripcion`) VALUES
+(1, 'Petición'),
+(2, 'Queja'),
+(3, 'Reclamo'),
+(4, 'Sugerencia');
+
+--
 -- Índices para tablas volcadas
 --
 
@@ -192,6 +238,12 @@ CREATE TABLE `tipo_pqrs` (
 -- Indices de la tabla `contacto`
 --
 ALTER TABLE `contacto`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `documentacion`
+--
+ALTER TABLE `documentacion`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -215,6 +267,12 @@ ALTER TABLE `persona`
 ALTER TABLE `pqrs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `tipo` (`tipo`);
+
+--
+-- Indices de la tabla `programacion`
+--
+ALTER TABLE `programacion`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `rol`
@@ -252,10 +310,16 @@ ALTER TABLE `contacto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `documentacion`
+--
+ALTER TABLE `documentacion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
@@ -270,6 +334,12 @@ ALTER TABLE `pqrs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `programacion`
+--
+ALTER TABLE `programacion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
@@ -279,7 +349,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `sesion`
 --
 ALTER TABLE `sesion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_documento`
@@ -291,7 +361,7 @@ ALTER TABLE `tipo_documento`
 -- AUTO_INCREMENT de la tabla `tipo_pqrs`
 --
 ALTER TABLE `tipo_pqrs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

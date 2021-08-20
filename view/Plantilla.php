@@ -105,9 +105,11 @@ if (isset($_GET["ubicacion"])) {
     <?php } else if ($_GET["ubicacion"] == "Privado") {
         include_once 'model/conexion.php';
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
-    } else if ($_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Ver-personal"
+    } else if (
+        $_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Ver-personal"
         || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Ver-noticia"
-        || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Documentacion" || $_GET["ubicacion"] == "Programacion-dia") { ?>
+        || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Documentacion" || $_GET["ubicacion"] == "Programacion-dia"
+    ) { ?>
         <!DOCTYPE html>
         <html lang="en">
 
@@ -192,6 +194,12 @@ if (isset($_GET["ubicacion"])) {
             <!-- jquery-validation -->
             <script src="view/presentacion/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
             <script src="view/presentacion/admin/plugins/jquery-validation/additional-methods.min.js"></script>
+            <!-- DataTables  & Plugins -->
+            <script src="view/presentacion/admin/plugins/datatables/jquery.dataTables.min.js"></script>
+            <script src="view/presentacion/admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+            <script src="view/presentacion/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+            <script src="view/presentacion/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+            <script src="view/presentacion/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
 
             <script src="view/presentacion/js/alertas.js"></script>
             <script src="view/presentacion/js/sweetalert2.min.js"></script>
