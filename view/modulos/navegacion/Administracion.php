@@ -38,7 +38,7 @@
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">M&aacute;s informaci&oacute;n <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="Ver-noticia" class="small-box-footer">M&aacute;s informaci&oacute;n <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

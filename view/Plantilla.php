@@ -200,12 +200,22 @@ if (isset($_GET["ubicacion"])) {
             <script src="view/presentacion/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
             <script src="view/presentacion/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
             <script src="view/presentacion/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+            <!-- date-range-picker -->
+            <script src="view/presentacion/admin/plugins/daterangepicker/daterangepicker.js"></script>
 
             <script src="view/presentacion/js/alertas.js"></script>
             <script src="view/presentacion/js/sweetalert2.min.js"></script>
 
             <script src="view/presentacion/js/registrar.js"></script>
             <script src="view/presentacion/js/eliminar.js"></script>
+            <script>
+                $(function() {
+                    //Timepicker
+                    $('#timepicker').datetimepicker({
+                        format: 'LT'
+                    })
+                });
+            </script>
         </body>
 
         </html>

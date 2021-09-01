@@ -144,7 +144,7 @@ $(document).ready(function () {
       rules: {
         descripcionNoticia: { required: true },
         lugarNoticia: { required: true },
-        fechaNoticia: { required: true, date: true }
+        fechaNoticia: { required: true, date: true },
       },
       messages: {
         descripcionNoticia: { required: "Debe de completar los campos." },
@@ -152,7 +152,7 @@ $(document).ready(function () {
         fechaNoticia: {
           required: "Debe de completar los campos.",
           date: "Seleccione una fecha correcta.",
-        }
+        },
       },
       errorElement: "span",
       errorPlacement: function (error, element) {
@@ -210,5 +210,64 @@ $(document).ready(function () {
         },
       });
     }
+  });
+});
+
+/*
+METODO PARA REGISTRAR PROGRAMACION
+*/
+$(document).ready(function () {
+  $("#FormRegistrarProgramacion").validate({
+    rules: {
+      nombreProgramacion: { required: true }
+    },
+    messages: {
+      nombreProgramacion: { required: "Debe de completar los campos." },
+      fechaProgramacion: {
+        required: "Debe de completar los campos.",
+        date: "Seleccione una fecha correcta.",
+      },
+      horaProgramacion: {
+        required: "Debe de completar los campos.",
+        date: "Seleccione una hora correcta.",
+      },
+    },
+    errorElement: "span",
+    errorPlacement: function (error, element) {
+      error.addClass("invalid-feedback");
+      element.closest(".form-group").append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass("is-invalid");
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass("is-invalid");
+    },
+    submitHandler: function () {
+      var datos = {
+        rol: $("#rol").val(),
+      };
+      $.ajax({
+        url: "model/registrarProgramacion.php",
+        method: "post",
+        data: datos,
+        dataType: "json",
+        type: "POST",
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          console.log(data);
+          /*if (data.respuesta == "exito") {
+            ingresoExitoso("Exito!", "Se registro correctamente el rol.");
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          } else {
+            respuestaError("Error!", "Ocurrio un error al registrar el rol.");
+          }*/
+        },
+      });
+    },
   });
 });

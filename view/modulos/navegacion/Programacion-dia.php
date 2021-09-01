@@ -14,8 +14,61 @@
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
+            <div class="row mb-2">
+                <div class="col-sm-4">
+                    <button type="button" class="btn btn-block btn-outline-primary" data-toggle="modal" data-target="#modal-default">Registrar programaci&oacute;n del d&iacute;a</button>
+                </div>
+            </div>
         </div><!-- /.container-fluid -->
     </div>
+
+    <!-- Modal Programacion día -->
+    <div class="modal fade" id="modal-default">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Registrar programaci&oacute;n del d&iacute;a</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form name="FormRegistrarProgramacion" id="FormRegistrarProgramacion" method="POST">
+                    <div class="modal-body">
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-5 col-form-label">Nombre programaci&oacute;n</label>
+                            <div class="col-sm-7">
+                                <input type="text" class="form-control" id="nombreProgramacion" name="nombreProgramacion" placeholder="Ingrese el nombre">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-5 col-form-label">Fecha programaci&oacute;n</label>
+                            <div class="col-sm-7">
+                                <input type="date" class="form-control" id="fechaProgramacion" name="fechaProgramacion">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="inputEmail3" class="col-sm-5 col-form-label">Hora programaci&oacute;n</label>
+                            <div class="col-sm-7">
+                                <div class="input-group date" id="timepicker" data-target-input="nearest">
+                                    <input type="text" class="form-control datetimepicker-input" data-target="#timepicker" id="horaProgramacion" name="horaProgramacion"/>
+                                    <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
+                                        <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Registrar</button>
+                    </div>
+                </form>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal -->
 
     <!-- Main content -->
     <section class="content">
@@ -378,111 +431,6 @@
                                         <td>N800</td>
                                         <td>-</td>
                                         <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Presto</td>
-                                        <td>Nintendo DS browser</td>
-                                        <td>Nintendo DS</td>
-                                        <td>8.5</td>
-                                        <td>C/A<sup>1</sup></td>
-                                    </tr>
-                                    <tr>
-                                        <td>KHTML</td>
-                                        <td>Konqureror 3.1</td>
-                                        <td>KDE 3.1</td>
-                                        <td>3.1</td>
-                                        <td>C</td>
-                                    </tr>
-                                    <tr>
-                                        <td>KHTML</td>
-                                        <td>Konqureror 3.3</td>
-                                        <td>KDE 3.3</td>
-                                        <td>3.3</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>KHTML</td>
-                                        <td>Konqureror 3.5</td>
-                                        <td>KDE 3.5</td>
-                                        <td>3.5</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tasman</td>
-                                        <td>Internet Explorer 4.5</td>
-                                        <td>Mac OS 8-9</td>
-                                        <td>-</td>
-                                        <td>X</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tasman</td>
-                                        <td>Internet Explorer 5.1</td>
-                                        <td>Mac OS 7.6-9</td>
-                                        <td>1</td>
-                                        <td>C</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tasman</td>
-                                        <td>Internet Explorer 5.2</td>
-                                        <td>Mac OS 8-X</td>
-                                        <td>1</td>
-                                        <td>C</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>NetFront 3.1</td>
-                                        <td>Embedded devices</td>
-                                        <td>-</td>
-                                        <td>C</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>NetFront 3.4</td>
-                                        <td>Embedded devices</td>
-                                        <td>-</td>
-                                        <td>A</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>Dillo 0.8</td>
-                                        <td>Embedded devices</td>
-                                        <td>-</td>
-                                        <td>X</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>Links</td>
-                                        <td>Text only</td>
-                                        <td>-</td>
-                                        <td>X</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>Lynx</td>
-                                        <td>Text only</td>
-                                        <td>-</td>
-                                        <td>X</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>IE Mobile</td>
-                                        <td>Windows Mobile 6</td>
-                                        <td>-</td>
-                                        <td>C</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Misc</td>
-                                        <td>PSP browser</td>
-                                        <td>PSP</td>
-                                        <td>-</td>
-                                        <td>C</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                        <td>-</td>
-                                        <td>U</td>
                                     </tr>
                                 </tbody>
                                 <tfoot>

@@ -23,7 +23,7 @@
     </div>
     <!-- /.content-header -->
 
-    <!-- Modal Rutas -->
+    <!-- Modal Rol -->
     <div class="modal fade" id="modal-default">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -53,6 +53,7 @@
         <!-- /.modal-dialog -->
     </div>
     <!-- /.modal -->
+
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
