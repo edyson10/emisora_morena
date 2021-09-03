@@ -25,8 +25,11 @@
             <section class="row" id="tmHome">
                 <div class="col-12 tm-home-container">
                     <div class="tm-home-right">
-                        <img src="view/presentacion/img/mobile-screen.png" alt="App on Mobile mockup" />
-                        <!--width="400" height="700" -->
+                        <!-- Inicio. radio hosting USAstreams.com html5 player -->
+                        <!-- Licencia: GRATIS-XDF4543ERF -->
+                        <iframe name="contenedorPlayer" class="cuadroBordeado" allow="autoplay" width="340px" height="450px" marginwidth=0 marginheight=0 hspace=0 vspace=0 frameborder=0 scrolling=no src="https://cp.usastreams.com/pr2g/APPlayerRadioHTML5.aspx?stream=http://node-29.zeno.fm/s87y2kpabnzuv?rj-ttl=5&rj-tok=AAABe6k2zlUAXNcr7lZNHpLKHg&fondo=08&formato=mp3&color=14&titulo=2&autoStart=1&vol=5&tipo=202&nombre=Morena+Stereo&botonPlay=1&imagen=https://i.ibb.co/RHdkZz2/logoemisora.png&server=http://node-29.zeno.fm/status.xslCHUMILLASmount=/s87y2kpabnzuvCHUMILLASrj-ttl=5&rj-tok=AAABe6k2zlUAXNcr7lZNHpLKHg"></iframe>
+                        <!-- En players responsive puede modificar el weight a sus necesidades, Por favor no modifique el resto del codigo para poder seguir ofreciendo este servicio gratis  -->
+                        <!-- Fin. USAstreams.com html5 player -->
                     </div>
                     <div class="col-lg-6 tm-contact-col-right">
                         <div class="tm-bg-white-transparent tm-contact-text">
@@ -66,8 +69,8 @@
                         <h2 class="tm-call-to-action-title">Dejanos tu comentario</h2>
                         <form action="#" method="get" class="tm-call-to-action-form">
                             <input name="email" type="email" class="tm-email-input" id="email" placeholder="Tu opinión" />
+                            <button type="submit" class="btn btn-secondary">Enviar</button>
                         </form>
-                        <button type="submit" class="btn btn-secondary">Enviar</button>
                     </div>
                     <img src="view/presentacion/img/18.jpeg" width="400" height="400" />
                 </div>
