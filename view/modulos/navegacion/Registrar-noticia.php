@@ -41,9 +41,15 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group row">
+                                            <label for="inputEmail3" class="col-sm-4 col-form-label">Titulo *</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="tituloNoticia" name="tituloNoticia" placeholder="Ingrese un titulo de la noticia">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-4 col-form-label">Descripci&oacute;n *</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="descripcionNoticia" name="descripcionNoticia" placeholder="Ingrese una descripci&oacute;n de la noticias">
+                                                <input type="text" class="form-control" id="descripcionNoticia" name="descripcionNoticia" placeholder="Ingrese una descripci&oacute;n de la noticia">
                                             </div>
                                         </div>
                                         <div class="form-group row">
@@ -60,13 +66,19 @@
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-4 col-form-label">Lugar (Opcional)</label>
                                             <div class="col-sm-8">
-                                                <input type="password" class="form-control" id="lugarNoticia" name="lugarNoticia" placeholder="Ingrese un lugar">
+                                                <input type="text" class="form-control" id="lugarNoticia" name="lugarNoticia" placeholder="Ingrese un lugar">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputPassword3" class="col-sm-4 col-form-label">Fecha (Opcional)</label>
                                             <div class="col-sm-8">
                                                 <input type="date" class="form-control" id="fechaNoticia" name="fechaNoticia" placeholder="Ingrese una fecha">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label for="inputPassword3" class="col-sm-4 col-form-label">Link (Opcional)</label>
+                                            <div class="col-sm-8">
+                                                <input type="text" class="form-control" id="linkNoticia" name="linkNoticia" placeholder="Ingrese un link de la noticia">
                                             </div>
                                         </div>
                                     </div>

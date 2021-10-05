@@ -31,10 +31,16 @@ if (isset($_GET["ubicacion"])) {
         <script src="view/presentacion/js/parallax.min.js"></script>
         <script src="view/presentacion/js/bootstrap.min.js"></script>
         <script src="view/presentacion/slick/slick.min.js"></script>
+        <!-- jquery-validation -->
+        <script src="view/presentacion/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
+        <script src="view/presentacion/admin/plugins/jquery-validation/additional-methods.min.js"></script>
 
         <script src="view/presentacion/js/alertas.js"></script>
         <script src="view/presentacion/js/sweetalert2.min.js"></script>
         <script src="view/presentacion/js/correo.js"></script>
+
+        <script src="view/presentacion/js/registrar.js"></script>
+        <script src="view/presentacion/js/eliminar.js"></script>
 
         <script>
             $(function() {
@@ -109,9 +115,10 @@ if (isset($_GET["ubicacion"])) {
         $_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Ver-personal"
         || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Ver-noticia"
         || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Documentacion" || $_GET["ubicacion"] == "Programacion-dia"
+        || $_GET["ubicacion"] == "Ver-pqrs" || $_GET["ubicacion"] == "Ver-correo"
     ) { ?>
         <!DOCTYPE html>
-        <html lang="en">
+        <html lang="es">
 
         <head>
             <meta charset="utf-8">
@@ -140,6 +147,10 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" href="view/presentacion/admin/plugins/summernote/summernote-bs4.min.css">
             <!-- =========== Sweetalert2 ============ -->
             <link rel="stylesheet" type="text/css" href="view/presentacion/css/sweetalert2.min.css" />
+            <!-- DataTables -->
+            <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+            <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+            <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
         </head>
 
         <body class="hold-transition sidebar-mini layout-fixed">
@@ -200,8 +211,17 @@ if (isset($_GET["ubicacion"])) {
             <script src="view/presentacion/admin/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
             <script src="view/presentacion/admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
             <script src="view/presentacion/admin/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+            <script src="view/presentacion/admin/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+            <script src="view/presentacion/admin/plugins/jszip/jszip.min.js"></script>
+            <script src="view/presentacion/admin/plugins/pdfmake/pdfmake.min.js"></script>
+            <script src="view/presentacion/admin/plugins/pdfmake/vfs_fonts.js"></script>
+            <script src="view/presentacion/admin/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+            <script src="view/presentacion/admin/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+            <script src="view/presentacion/admin/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
             <!-- date-range-picker -->
             <script src="view/presentacion/admin/plugins/daterangepicker/daterangepicker.js"></script>
+            <!-- bs-custom-file-input -->
+            <script src="view/presentacion/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 
             <script src="view/presentacion/js/alertas.js"></script>
             <script src="view/presentacion/js/sweetalert2.min.js"></script>
@@ -216,8 +236,32 @@ if (isset($_GET["ubicacion"])) {
                     })
                 });
             </script>
+            <script>
+                $(function() {
+                    bsCustomFileInput.init();
+                });
+            </script>
+            <!-- Page specific script -->
+            <script>
+                $(function() {
+                    $("#example1").DataTable({
+                        "responsive": true,
+                        "lengthChange": false,
+                        "autoWidth": false,
+                        "buttons": ["pdf"]
+                    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+                    $('#example2').DataTable({
+                        "paging": true,
+                        "lengthChange": false,
+                        "searching": false,
+                        "ordering": true,
+                        "info": true,
+                        "autoWidth": false,
+                        "responsive": true,
+                    });
+                });
+            </script>
         </body>
-
         </html>
 <?php } else {
         header('location: Inicio');

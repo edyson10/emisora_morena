@@ -8,7 +8,7 @@ $hora = $_POST['horaProgramacion'];
 
 $fechaHora = $fecha . " " . $hora;
 
-$sql = $conexion->query("INSERT INTO programacion (id, nombre, fecha_hora) VALUES (NULL, '$nombre', '$fechaHora');");
+$sql = $conexion->query("INSERT INTO programacion (id, nombre, fecha_hora) VALUES (NULL, '$nombre', '$fechaHora')");
 
 if ($sql) {
     $respuesta = array('respuesta' => 'exito');

@@ -86,9 +86,14 @@
                     <!-- small box -->
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
-
-                            <p>Unique Visitors</p>
+                            <h3>
+                                <?php
+                                $query = $conexion->query("SELECT count(*) FROM pqrs");
+                                $row = mysqli_fetch_array($query);
+                                echo $row[0];
+                                ?>
+                            </h3>
+                            <p>PQRS Registrados</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
@@ -97,6 +102,27 @@
                     </div>
                 </div>
                 <!-- ./col -->
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-info">
+                        <div class="inner">
+                            <h3>
+                                <?php
+                                $query = $conexion->query("SELECT count(*) FROM contacto");
+                                $row = mysqli_fetch_array($query);
+                                echo $row[0];
+                                ?>
+                            </h3>
+                            <p>Contactos registrados</p>
+                        </div>
+                        <div class="icon">
+                            <i class="ion ion-bag"></i>
+                        </div>
+                        <a href="Ver-noticia" class="small-box-footer">M&aacute;s informaci&oacute;n <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

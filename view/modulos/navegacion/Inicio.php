@@ -45,13 +45,16 @@
                                     </thead>
                                     <tbody class="table-light">
                                         <?php
-                                        $query = $conexion->query("SELECT * FROM programacion ORDER BY fecha_hora ASC");
+                                        $query = $conexion->query("SELECT * FROM programacion WHERE DATE_FORMAT(fecha_hora, '%Y-%m-%d') = CURDATE() ORDER BY fecha_hora ASC");
+                                        $id = 1;
                                         while ($row = mysqli_fetch_array($query)) {
+                                            $horario = explode(" ", $row["fecha_hora"]);
                                             echo "<tr>
-                                                <th scope='row'>" . $row["id"] . "</th>
+                                                <th scope='row'>" . $id . "</th>
                                                 <td>" . $row["nombre"] . "</td>
-                                                <td>" . $row["fecha_hora"] . "</td>
+                                                <td>" . $horario[1] . "</td>
                                             </tr>";
+                                            $id++;
                                         }
                                         ?>
                                     </tbody>

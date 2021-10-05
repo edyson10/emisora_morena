@@ -25,30 +25,32 @@
       <section class="row" id="tmHome">
         <div class="col-12 tm-home-container">
           <div class="col-lg-12 tm-contact-col-right">
-              <div class="tm-bg-white-transparent tm-contact-text">
-                  <h3 class="tm-service-tab-title">Puedes enviarnos un correo electrónico</h3>
-                      <div id="list-example" class="list-group">
-                      <form method="POST" id="FormEnviarCorreo" name="FormEnviarCorreo" class="tm-bg-white tm-contact-form" enctype="multipart/form-data">
-                        <div class="form-group">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlInput1">Correo electrónico remitente</label>
-                          <input type="email" id="contact_email" name="contact_email" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Correo">
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlInput1">Asunto</label>
-                          <input rows="text" id="contact_asunt" name="contact_asunt" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Asunto"/>
-                        </div>
-                        <div class="form-group">
-                          <label for="exampleFormControlInput1">Mensaje</label>
-                          <textarea rows="6" id="contact_message" name="contact_message" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Mensaje"></textarea>
-                        </div>
-                        <div class="text-right">
-                          <button type="button" class="btn btn-outline-primary">Enviar</button>
-                        </div>
-                      </form>
-                      </div>
+            <div class="tm-bg-white-transparent tm-contact-text">
+              <h3 class="tm-service-tab-title">Puedes enviarnos un correo electrónico</h3>
+              <div id="list-example" class="list-group">
+                <form method="POST" id="FormEnviarCorreo" name="FormEnviarCorreo" class="tm-bg-white tm-contact-form" enctype="multipart/form-data">
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Nombre remitente<b style="color:#FF0000">*</b></label>
+                    <input type="text" id="contact_name" name="contact_name" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Nombre" style="color: black;">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Correo electrónico remitente<b style="color:#FF0000">*</b></label>
+                    <input type="email" id="contact_email" name="contact_email" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Correo" style="color: black;">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Asunto<b style="color:#FF0000">*</b></label>
+                    <input rows="text" id="contact_asunt" name="contact_asunt" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Asunto" style="color: black;" />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Mensaje<b style="color:#FF0000">*</b></label>
+                    <textarea rows="6" id="contact_message" name="contact_message" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Mensaje" style="color: black;"></textarea>
+                  </div>
+                  <div class="text-right">
+                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
+                  </div>
+                </form>
               </div>
+            </div>
           </div>
         </div>
       </section>

@@ -25,66 +25,24 @@
       <section class="row tm-testimonials-section">
         <div class="col-12 tm-carousel">
           <div class="tm-bg-white-transparent tm-testimonial-box text-center">
-            <div class="tm-person-img-container">
-              <img src="view/presentacion/img/25.jpg" alt="Image" class="img-fluid mx-auto" />
-            </div>
-            <h3 class="tm-about-name tm-uppercase" style="color:#000000">En Labateca se rueda el cortometraje ‘Antes de morir’</h3>
-            <p class="tm-about-description">El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.
-            </p><br>
-            <a style="color:#140494" href="https://www.laopinion.com.co/entretenimiento/en-labateca-se-rueda-el-cortometraje-antes-de-morir?platform=hootsuite">Ver más</a>
-            <p class="tm-about-description">Martes, 9 de Marzo de 2021</p>
+            <?php
+            $query = $conexion->query("SELECT * FROM noticia ORDER BY id ASC LIMIT 6");
+            while ($row = mysqli_fetch_array($query)) {
+              if (empty($row[7]) || $row[7] == NULL) {
+                  $link = "";
+              } else {
+                $link = "<a style='color:#140494' href='" . $row[7] . "'>Ver más</a>";;
+              }
+              echo "<div class='tm-person-img-container'>
+                      <img src='view/presentacion/img/25.jpg' alt='Image' class='img-fluid mx-auto' />
+                    </div>
+                    <h3 class='tm-about-name tm-uppercase' style='color:#000000'>" . utf8_encode($row[3]) . "</h3>
+                    <p class='tm-about-description'>" . utf8_encode($row[4]) . "</p><br>
+                    " . $link . "
+                    <p class='tm-about-description'> En " . utf8_encode($row[6]) . ' el día ' . utf8_encode($row[5]) ."</p>";
+            }
+            ?>
           </div>
-
-          <div class="tm-bg-white-transparent tm-testimonial-box text-center">
-            <div class="tm-person-img-container">
-              <img src="view/presentacion/img/25.jpg" alt="Image" class="img-fluid mx-auto" />
-            </div>
-            <h3 class="tm-about-name tm-uppercase" style="color:#000000">En Labateca se rueda el cortometraje ‘Antes de morir’</h3>
-            <p class="tm-about-description">El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.
-            </p><br>
-            <p class="tm-about-description">Martes, 9 de Marzo de 2021</p>
-          </div>
-
-          <div class="tm-bg-white-transparent tm-testimonial-box text-center">
-            <div class="tm-person-img-container">
-              <img src="view/presentacion/img/25.jpg" alt="Image" class="img-fluid mx-auto" />
-            </div>
-            <h3 class="tm-about-name tm-uppercase" style="color:#000000">En Labateca se rueda el cortometraje ‘Antes de morir’</h3>
-            <p class="tm-about-description">El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.
-            </p><br>
-            <p class="tm-about-description">Martes, 9 de Marzo de 2021</p>
-          </div>
-
-          <div class="tm-bg-white-transparent tm-testimonial-box text-center">
-            <div class="tm-person-img-container">
-              <img src="view/presentacion/img/25.jpg" alt="Image" class="img-fluid mx-auto" />
-            </div>
-            <h3 class="tm-about-name tm-uppercase" style="color:#000000">En Labateca se rueda el cortometraje ‘Antes de morir’</h3>
-            <p class="tm-about-description">El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.
-            </p><br>
-            <p class="tm-about-description">Martes, 9 de Marzo de 2021</p>
-          </div>
-
-          <div class="tm-bg-white-transparent tm-testimonial-box text-center">
-            <div class="tm-person-img-container">
-              <img src="view/presentacion/img/25.jpg" alt="Image" class="img-fluid mx-auto" />
-            </div>
-            <h3 class="tm-about-name tm-uppercase" style="color:#000000">En Labateca se rueda el cortometraje ‘Antes de morir’</h3>
-            <p class="tm-about-description">El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.
-            </p><br>
-            <p class="tm-about-description">Martes, 9 de Marzo de 2021</p>
-          </div>
-
-          <div class="tm-bg-white-transparent tm-testimonial-box text-center">
-            <div class="tm-person-img-container">
-              <img src="view/presentacion/img/25.jpg" alt="Image" class="img-fluid mx-auto" />
-            </div>
-            <h3 class="tm-about-name tm-uppercase" style="color:#000000">En Labateca se rueda el cortometraje ‘Antes de morir’</h3>
-            <p class="tm-about-description">El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.
-            </p><br>
-            <p class="tm-about-description">Martes, 9 de Marzo de 2021</p>
-          </div>
-        </div>
       </section>
       <!-- Call to Action -->
       <?php include "view/modulos/footer.php"; ?>

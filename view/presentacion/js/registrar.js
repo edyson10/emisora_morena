@@ -142,15 +142,13 @@ $(document).ready(function () {
     e.preventDefault();
     $("#FormRegistroNoticia").validate({
       rules: {
+        tituloNoticia: { required: true },
         descripcionNoticia: { required: true },
-        lugarNoticia: { required: true },
-        fechaNoticia: { required: true, date: true },
       },
       messages: {
+        tituloNoticia: { required: "Debe de completar los campos." },
         descripcionNoticia: { required: "Debe de completar los campos." },
-        lugarNoticia: { required: "Debe de completar los campos." },
         fechaNoticia: {
-          required: "Debe de completar los campos.",
           date: "Seleccione una fecha correcta.",
         },
       },
@@ -183,9 +181,9 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
-          //console.log(data)
-          //var resultado = JSON.parse(data);
-          //console.log('->' + resultado.respuesta);
+          console.log(data);
+          var resultado = JSON.parse(data);
+          console.log("->" + resultado.respuesta);
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Exito!",
@@ -219,7 +217,7 @@ METODO PARA REGISTRAR PROGRAMACION
 $(document).ready(function () {
   $("#FormRegistrarProgramacion").validate({
     rules: {
-      nombreProgramacion: { required: true }
+      nombreProgramacion: { required: true },
     },
     messages: {
       nombreProgramacion: { required: "Debe de completar los campos." },
@@ -266,6 +264,141 @@ $(document).ready(function () {
           } else {
             respuestaError("Error!", "Ocurrio un error al registrar el rol.");
           }*/
+        },
+      });
+    },
+  });
+});
+
+/*
+METODO PARA REGISTRAR PQRS
+*/
+$(document).ready(function () {
+  $("#FormEnviarPQRS").validate({
+    rules: {
+      tipoPQRS: { required: true },
+      nombrePQRS: { required: true },
+      numeroPQRS: { required: true, number: true },
+      correoPQRS: { required: true },
+      descripcionPQRS: { required: true },
+    },
+    messages: {
+      tipoPQRS: { required: "Debe de completar los campos." },
+      nombrePQRS: {
+        required: "Debe de completar los campos.",
+        date: "Seleccione una fecha correcta.",
+      },
+      numeroPQRS: {
+        required: "Debe de completar los campos.",
+        number: "Solo se aceptan numero.",
+      },
+      correoPQRS: {
+        required: "Debe de completar los campos.",
+        email: "Solo se aceptan correos.",
+      },
+      descripcionPQRS: { required: "Debe de completar los campos." },
+    },
+    errorElement: "span",
+    errorPlacement: function (error, element) {
+      error.addClass("invalid-feedback");
+      element.closest(".form-group").append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass("is-invalid");
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass("is-invalid");
+    },
+    submitHandler: function () {
+      var datos = {
+        tipoPQRS: $("#tipoPQRS").val(),
+        nombrePQRS: $("#nombrePQRS").val(),
+        numeroPQRS: $("#numeroPQRS").val(),
+        correoPQRS: $("#correoPQRS").val(),
+        descripcionPQRS: $("#descripcionPQRS").val(),
+      };
+      $.ajax({
+        url: "model/registrarPQRS.php",
+        method: "post",
+        data: datos,
+        dataType: "json",
+        type: "POST",
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          console.log(data);
+          if (data.respuesta == "exito") {
+            ingresoExitoso("Exito!", "Se envio correctamente su PQRS.");
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          } else {
+            respuestaError("Error!", "Ocurrio un error el PQRS.");
+          }
+        },
+      });
+    },
+  });
+});
+
+/*
+METODO PARA ENVIAR CORREO DE CONTACTO
+*/
+$(document).ready(function () {
+  $("#FormEnviarCorreo").validate({
+    rules: {
+      contact_name: { required: true },
+      contact_email: { required: true, email: true },
+      contact_asunt: { required: true },
+      contact_message: { required: true },
+    },
+    messages: {
+      contact_name: { required: "Debe de completar los campos." },
+      contact_email: {
+        required: "Debe de completar los campos.",
+        email: "Solo se aceptan correos.",
+      },
+      contact_asunt: { required: "Debe de completar los campos." },
+      contact_message: { required: "Debe de completar los campos." },
+    },
+    errorElement: "span",
+    errorPlacement: function (error, element) {
+      error.addClass("invalid-feedback");
+      element.closest(".form-group").append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass("is-invalid");
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass("is-invalid");
+    },
+    submitHandler: function () {
+      var datos = {
+        contact_name: $("#contact_name").val(),
+        contact_email: $("#contact_email").val(),
+        contact_asunt: $("#contact_asunt").val(),
+        contact_message: $("#contact_message").val(),
+      };
+      $.ajax({
+        url: "model/registrarContacto.php",
+        method: "post",
+        data: datos,
+        dataType: "json",
+        type: "POST",
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          console.log(data);
+          if (data.respuesta == "exito") {
+            ingresoExitoso("Exito!", "Se envio correctamente su correo.");
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          } else {
+            respuestaError("Error!", "Ocurrio un error al enviar el correo.");
+          }
         },
       });
     },

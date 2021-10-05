@@ -45,10 +45,10 @@
             </p>
             <div id="list-example" class="list-group">
               <div id="list-example" class="list-group">
-                <form method="POST" id="FormEnviarCorreo" name="FormEnviarCorreo" class="tm-bg-white tm-contact-form" enctype="multipart/form-data">
+                <form method="POST" id="FormEnviarPQRS" name="FormEnviarPQRS" class="tm-bg-white tm-contact-form">
                   <div class="form-group">
                     <label for="exampleFormControlSelect1">Tipo de Solicitud<b style="color:#FF0000">*</b></label>
-                    <select class="form-control text-body" id="exampleFormControlSelect1">
+                    <select class="custom-select" id="tipoPQRS" name="tipoPQRS">
                       <?php
                       $query = $conexion->query("SELECT * FROM tipo_pqrs ORDER BY descripcion");
                       while ($valores = mysqli_fetch_array($query)) {
@@ -59,22 +59,22 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre del solicitante<b style="color:#FF0000">*</b></label>
-                    <input type="nomSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="nombre">
+                    <input type="text" class="form-control text-body" id="nombrePQRS" name="nombrePQRS">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Número de teléfono<b style="color:#FF0000">*</b></label>
-                    <input type="telSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="número">
+                    <input type="text" class="form-control text-body" id="numeroPQRS" name="numeroPQRS">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Correo electrónico<b style="color:#FF0000">*</b></label>
-                    <input type="emailSolicitante" class="form-control text-body" id="exampleFormControlInput1" placeholder="Email">
+                    <input type="email" class="form-control text-body" id="correoPQRS" name="correoPQRS">
                   </div>
                   <div class="form-group">
                     <label for="exampleFormControlTextarea1">Descripción de la solicitud<b style="color:#FF0000">*</b></label>
-                    <textarea class="form-control text-body" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control text-body" id="descripcionPQRS" name="descripcionPQRS" rows="3"></textarea>
                   </div>
                   <div class="text-right">
-                    <button type="button" class="btn btn-outline-primary">Enviar</button>
+                    <button type="submit" class="btn btn-outline-primary">Enviar</button>
                   </div>
                 </form>
               </div>

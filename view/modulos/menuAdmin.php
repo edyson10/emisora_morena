@@ -78,7 +78,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
+                        <a href="Ver-correo" class="nav-link">
                             <i class="nav-icon fas fa-calendar-check"></i>
                             <p>
                                 Contacto
@@ -94,7 +94,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="pages/kanban.html" class="nav-link">
+                        <a href="Ver-pqrs" class="nav-link">
                             <i class="nav-icon fas fa-columns"></i>
                             <p>
                                 PQRS
