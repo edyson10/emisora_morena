@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/xmst8pmvivhf/public_html/
+    - export DEPLOYPATH=/home/genioweb1/public_html/
     - /bin/cp index.php $DEPLOYPATH
     - /bin/cp -R * $DEPLOYPATH
