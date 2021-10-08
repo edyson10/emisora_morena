@@ -228,6 +228,7 @@ if (isset($_GET["ubicacion"])) {
 
             <script src="view/presentacion/js/registrar.js"></script>
             <script src="view/presentacion/js/eliminar.js"></script>
+            <!--<script src="view/presentacion/js/app.js"></script>-->
             <script>
                 $(function() {
                     //Timepicker

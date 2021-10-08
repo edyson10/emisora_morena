@@ -31,7 +31,7 @@
               </div>
               <div class="tm-app-feature-description-box">
                 <h2 class="mb-4 tm-app-feature-title">Misión</h2>
-                <p class="tm-app-feature-description">Suspendisse finibus tellus eget sem lacinia, vel lacinia libero consequat. Sed imperdiet placerat vehicula. Etiam eu egestas nibh. In turpis ligula.</p>
+                <p class="tm-app-feature-description" style="text-align: justify;">La emisora comunitaria morena FM Stereo 98.2  es una organización social sin ánimo de lucro que desde la comunicación radial promueve actividades de programación y transmisión en el servicio de radiodifusión sonora, brindando información y entretenimiento con espacios de participación y contenidos de interés, fomentando valores como el servicio unidad, igualdad y solidaridad.</p>
               </div>
             </div>
           </div>
@@ -43,7 +43,7 @@
               </div>
               <div class="tm-app-feature-description-box">
                 <h2 class="mb-4 tm-app-feature-title">Visión</h2>
-                <p class="tm-app-feature-description">Etiam fermentum nisi lorem, vel pharetra ipsum egestas non. Proin odio ipsum, vestibulum quis elit quis, vulputate venenatis neque. Nam dignissim libero.</p>
+                <p class="tm-app-feature-description" style="text-align: justify;">La emisora comunitaria morena FM Stereo 98.2, para el año 2.035 será un medio  radial de gran reconocimiento que mediante la tecnología digital y la creatividad e innovación en la comunicación y transmisión de espacios y contenidos fortalecerá los  tejidos de solidaridad basado en los pilares de sostenibilidad, veracidad y promoción sociocultural en el municipio de Labateca.</p>
               </div>
             </div>
           </div>

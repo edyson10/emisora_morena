@@ -53,9 +53,6 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
-          //console.log(data)
-          //var resultado = JSON.parse(data);
-          //console.log('->' + resultado.respuesta);
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Exito!",
@@ -119,7 +116,6 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
-          console.log(data);
           if (data.respuesta == "exito") {
             ingresoExitoso("Exito!", "Se registro correctamente el rol.");
             setTimeout(function () {
@@ -140,50 +136,24 @@ METODO PARA REGISTRAR NOTICIA
 $(document).ready(function () {
   $("#FormRegistroNoticia").on("submit", function (e) {
     e.preventDefault();
-    $("#FormRegistroNoticia").validate({
-      rules: {
-        tituloNoticia: { required: true },
-        descripcionNoticia: { required: true },
-      },
-      messages: {
-        tituloNoticia: { required: "Debe de completar los campos." },
-        descripcionNoticia: { required: "Debe de completar los campos." },
-        fechaNoticia: {
-          date: "Seleccione una fecha correcta.",
-        },
-      },
-      errorElement: "span",
-      errorPlacement: function (error, element) {
-        error.addClass("invalid-feedback");
-        element.closest(".form-group").append(error);
-      },
-      highlight: function (element, errorClass, validClass) {
-        $(element).addClass("is-invalid");
-      },
-      unhighlight: function (element, errorClass, validClass) {
-        $(element).removeClass("is-invalid");
-      },
-    });
     var datos = new FormData(this);
     if (document.getElementById("fotoNoticia").files.length == 0) {
-      respuestaError("Error!", "Debe de cargar un foto!");
+      Swal.fire({
+        icon: "error",
+        title: "¡Ups!",
+        text: "No se ha cargado ningún archivo",
+      });
     } else {
       $.ajax({
         url: "model/registrarNoticia.php",
         data: datos,
-        type: "post",
+        type: $(this).attr("method"),
         dataType: "json",
         contentType: false,
         processData: false,
         async: true,
         cache: false,
-        beforeSend: function () {
-          respuestaInfoEspera("Registrando... ¡Espere por favor!");
-        },
         success: function (data) {
-          console.log(data);
-          var resultado = JSON.parse(data);
-          console.log("->" + resultado.respuesta);
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Exito!",
@@ -192,18 +162,10 @@ $(document).ready(function () {
             setTimeout(function () {
               window.location.href = "Ver-noticia";
             }, 1000);
+          } else if (data.respuesta == "vacio") {
+            respuestaError("Error!", "Debe de completar los campos.");
           } else if (data.respuesta == "error") {
-            respuestaError(
-              "Error!",
-              "Ocurrio un error al registrar la noticia"
-            );
-          } else if (data.respuesta == "noformato") {
-            respuestaError(
-              "Error!",
-              "Debe de elegir una foto con extensión .jpg, .jpeg, .png."
-            );
-          } else if (data.respuesta == "notamano") {
-            respuestaError("Error!", "Debe de elegir un tamaño menor a 2MB.");
+            respuestaError("Error!", "Error al subir la noticia");
           }
         },
       });
@@ -243,7 +205,9 @@ $(document).ready(function () {
     },
     submitHandler: function () {
       var datos = {
-        rol: $("#rol").val(),
+        nombreProgramacion: $("#nombreProgramacion").val(),
+        fechaProgramacion: $("#fechaProgramacion").val(),
+        horaProgramacion: $("#horaProgramacion").val(),
       };
       $.ajax({
         url: "model/registrarProgramacion.php",
@@ -255,15 +219,17 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
-          console.log(data);
-          /*if (data.respuesta == "exito") {
-            ingresoExitoso("Exito!", "Se registro correctamente el rol.");
+          if (data.respuesta == "exito") {
+            ingresoExitoso(
+              "Exito!",
+              "Se registro correctamente la programación."
+            );
             setTimeout(function () {
               location.reload();
             }, 1000);
           } else {
-            respuestaError("Error!", "Ocurrio un error al registrar el rol.");
-          }*/
+            respuestaError("Error!", "Ocurrio un error al registrar.");
+          }
         },
       });
     },
@@ -327,7 +293,6 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
-          console.log(data);
           if (data.respuesta == "exito") {
             ingresoExitoso("Exito!", "Se envio correctamente su PQRS.");
             setTimeout(function () {
@@ -390,7 +355,6 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
-          console.log(data);
           if (data.respuesta == "exito") {
             ingresoExitoso("Exito!", "Se envio correctamente su correo.");
             setTimeout(function () {

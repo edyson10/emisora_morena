@@ -4,15 +4,15 @@ require_once 'conexion.php';
 
 //die(json_encode($_POST));
 
-$nombre = $_POST['nombre'];
-$apellido = $_POST['apellido'];
-$tipo_documento = $_POST['tipo_documento'];
-$identificacion = $_POST['identificacion'];
-$correo = $_POST['email'];
-$rol = $_POST['rol'];
-$fecha_vinculacion = $_POST['fechaVinculacion'];
-$contrasena = $_POST['contrasena'];
-$repContrasena = $_POST['repContrasena'];
+$nombre = $_POST['nombrePersonal'];
+$apellido = $_POST['apellidoPersonal'];
+$tipo_documento = $_POST['tipoDocumentoPersonal'];
+$identificacion = $_POST['documentoPersonal'];
+$correo = $_POST['correoPersonal'];
+$rol = $_POST['rolPersonal'];
+$fecha_vinculacion = $_POST['fechaInicioPersonal'];
+$contrasena = $_POST['passPersonal'];
+$repContrasena = $_POST['repPassPersonal'];
 
 $directorio = "Archivos/imagenes/personal/";
 
@@ -35,7 +35,7 @@ if ($contrasena != $repContrasena) {
 
                 $sql = $conexion->query("INSERT INTO persona (id, nombre, apellido, tipo_documento, documento, correo, contrasena, rol, imagen, ruta_imagen, 
                 fecha_inicio, fecha_fin, estado) VALUES (NULL, '$nombre', '$apellido', '$tipo_documento', '$identificacion', '$correo', '$contrasena', '$rol', 
-                NULL, NULL, '$fecha_vinculacion', NULL, '1')");
+                '$nombreImagen', '$nombreImagen', '$fecha_vinculacion', NULL, '1')");
 
                 if ($sql) {
                     $respuesta = array('respuesta' => 'exito');

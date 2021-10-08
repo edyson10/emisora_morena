@@ -94,13 +94,13 @@
                                     <?php
                                     $query = $conexion->query("SELECT * FROM programacion ORDER BY id ASC");
                                     while ($row = mysqli_fetch_array($query)) {
+                                        //<a class='btn btn-warning' onclick='editarProgramacion(" . $row["id"] . ")'><i class='fas fa-edit' title='Editar programación'></i></a>
                                         echo "<tr>
                                             <td>" . $row["id"] . "</td>
                                             <td>" . $row["nombre"] . "</td>
                                             <td>" . $row["fecha_hora"] . "</td>
                                             <td class='text-center py-0 align-middle'>
                                                 <div class='btn-group btn-group-sm'>
-                                                <a class='btn btn-warning' onclick='editarProgramacion(" . $row["id"] . ")'><i class='fas fa-edit' title='Editar programación'></i></a>
                                                 <a class='btn btn-danger' onclick='eliminarProgramacion(" . $row["id"] . ")'><i class='fas fa-trash' title='Eliminar programación'></i></a>
                                                 </div>
                                             </td>

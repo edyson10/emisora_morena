@@ -35,7 +35,7 @@
                             <div class="card-body">
                                 <div class="alert alert-info alert-dismissible">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
-                                    <h6><i class="icon fas fa-ban"></i> Importante</h6>
+                                    <h6><i class="icon fas fa-ban"></i> <strong>IMPORTANTE</strong></h6>
                                     Los campos que tengan asterisco son obligatorios.
                                 </div>
                                 <div class="row">
