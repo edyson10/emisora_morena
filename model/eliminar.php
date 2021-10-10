@@ -14,7 +14,8 @@ if ($_POST['eliminar'] == 'eliminarRol') {
     echo json_encode($respuesta);
 } else if ($_POST['eliminar'] == 'eliminarPersonal') {
     $id = $_POST['id'];
-    $sql = "UPDATE persona SET estado = '0' WHERE id = '$id'";
+    $fechaActual = date('Y-m-d');
+    $sql = "UPDATE persona SET fecha_fin = '$fechaActual', estado = '0' WHERE id = '$id'";
     $ejecutar = mysqli_query($conexion, $sql);
     if ($ejecutar) {
         $respuesta = array('respuesta' => 'exito');

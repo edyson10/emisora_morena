@@ -11,7 +11,14 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-                <img src="view/presentacion/admin/dist/img/user_1.png" class="img-circle elevation-2" alt="User Image">
+                <?php 
+                    if (empty($_SESSION['imagen']) || $_SESSION['imagen'] == NULL || empty($_SESSION['ruta_imagen']) || $_SESSION['ruta_imagen'] == NULL) {
+                        $imagen = "view/presentacion/admin/dist/img/user_1.png";
+                    } else {
+                        $imagen = "model/Archivos/imagenes/personal/" . $_SESSION['imagen'];
+                    }
+                ?>
+                <img src="<?php echo $imagen ?>" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
                 <a href="#" class="d-block"><?php echo $_SESSION['nombre'] . " " . $_SESSION['apellido']; ?></a>
@@ -86,7 +93,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="Documentacion" class="nav-link">
+                        <a href="" class="nav-link">
                             <i class="nav-icon fas fa-folder"></i>
                             <p>
                                 Documentos
@@ -120,6 +127,29 @@
                 </ul>
             <?php } else if ($_SESSION['rol'] == "Locutor") { ?>
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-edit"></i>
+                            <p>
+                                Noticias
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="Registrar-noticia" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registrar noticia</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Ver-noticia" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Ver noticia</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a href="Programacion-dia" class="nav-link">
                             <i class="nav-icon fas fa-columns"></i>

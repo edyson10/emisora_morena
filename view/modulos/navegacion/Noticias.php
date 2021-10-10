@@ -24,25 +24,32 @@
 
       <section class="row tm-testimonials-section">
         <div class="col-12 tm-carousel">
-          <div class="tm-bg-white-transparent tm-testimonial-box text-center">
-            <?php
-            $query = $conexion->query("SELECT * FROM noticia ORDER BY id ASC LIMIT 6");
-            while ($row = mysqli_fetch_array($query)) {
-              if (empty($row[7]) || $row[7] == NULL) {
-                  $link = "";
-              } else {
-                $link = "<a style='color:#140494' href='" . $row[7] . "'>Ver más</a>";;
-              }
-              echo "<div class='tm-person-img-container'>
-                      <img src='view/presentacion/img/25.jpg' alt='Image' class='img-fluid mx-auto' />
-                    </div>
-                    <h3 class='tm-about-name tm-uppercase' style='color:#000000'>" . utf8_encode($row[3]) . "</h3>
-                    <p class='tm-about-description'>" . utf8_encode($row[4]) . "</p><br>
-                    " . $link . "
-                    <p class='tm-about-description'> En " . utf8_encode($row[6]) . ' el día ' . utf8_encode($row[5]) ."</p>";
+          <?php
+          $query = $conexion->query("SELECT * FROM noticia ORDER BY id ASC LIMIT 6");
+          while ($row = mysqli_fetch_array($query)) {
+            if (empty($row[7]) || $row[7] == NULL) {
+              $link = "";
+            } else {
+              $link = "<a style='color:#140494' href='" . $row[7] . "' target='_blank'>Ver más</a>";
             }
-            ?>
-          </div>
+
+            if (empty($row[5]) || $row[5] == NULL) {
+              $date = "";
+            } else {
+              $date = "<p class='tm-about-description'> En " . utf8_encode($row[6]) . ' el día ' . utf8_encode($row[5]) . "</p>";
+            }
+            
+            echo " <div class='tm-bg-white-transparent tm-testimonial-box text-center'>
+                    <div class='tm-person-img-container'>
+                      <img src='model/" . $row[1] . "' alt='Image' class='img-fluid mx-auto' />
+                    </div>
+                    <h5 class='tm-about-name tm-uppercase' style='color:#000000'>" . utf8_encode($row[3]) . "</h5>
+                    <p class='tm-about-description'>" . utf8_encode($row[4]) . "</p><br>
+                    " . $link . $date . " 
+                    </div>";
+          }
+          ?>
+        </div>
       </section>
       <!-- Call to Action -->
       <?php include "view/modulos/footer.php"; ?>

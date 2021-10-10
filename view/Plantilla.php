@@ -20,6 +20,10 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick-theme.css" />
             <!-- =========== Sweetalert2 ============ -->
             <link rel="stylesheet" type="text/css" href="view/presentacion/css/sweetalert2.min.css" />
+            <!-- Slick -->
+            <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick.css" />
+            <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick-theme.css" />
+            <link rel="stylesheet" href="view/presentacion/css/templatemo-style.css" />
         </head>
 
         <?php
@@ -42,6 +46,71 @@ if (isset($_GET["ubicacion"])) {
         <script src="view/presentacion/js/registrar.js"></script>
         <script src="view/presentacion/js/eliminar.js"></script>
 
+        <script>
+            $(function() {
+                $('.tabgroup > div').hide();
+                $('.tabgroup > div:first-of-type').show();
+                $('.tabs a').click(function(e) {
+                    e.preventDefault();
+                    var $this = $(this),
+                        tabgroup = '#' + $this.parents('.tabs').data('tabgroup'),
+                        others = $this.closest('li').siblings().children('a'),
+                        target = $this.attr('href');
+                    others.removeClass('active');
+                    $this.addClass('active');
+                    $(tabgroup).children('div').hide();
+                    $(target).show();
+
+                    // Scroll to tab content (for mobile)
+                    if ($(window).width() < 992) {
+                        $('html, body').animate({
+                            scrollTop: $("#first-tab-group").offset().top
+                        }, 200);
+                    }
+                })
+
+                $('.tm-carousel').slick({
+                    dots: true,
+                    infinite: false,
+                    arrows: false,
+                    speed: 300,
+                    slidesToShow: 3,
+                    slidesToScroll: 2,
+                    responsive: [{
+                            breakpoint: 1024,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 2,
+                                slidesToScroll: 1,
+                                infinite: true,
+                                dots: true
+                            }
+                        },
+                        {
+                            breakpoint: 600,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                arrows: false,
+                                slidesToShow: 1,
+                                slidesToScroll: 1
+                            }
+                        }
+                        // You can unslick at a given breakpoint now by adding:
+                        // settings: "unslick"
+                        // instead of a settings object
+                    ]
+                });
+            });
+        </script>
+        <!-- Slick -->
+        <script src="view/presentacion/slick/slick.min.js"></script>
         <script>
             $(function() {
                 $('.tabgroup > div').hide();
@@ -151,6 +220,7 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
             <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
             <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
         </head>
 
         <body class="hold-transition sidebar-mini layout-fixed">
@@ -263,6 +333,7 @@ if (isset($_GET["ubicacion"])) {
                 });
             </script>
         </body>
+
         </html>
 <?php } else {
         header('location: Inicio');
