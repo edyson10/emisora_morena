@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-08-2021 a las 16:41:05
+-- Tiempo de generación: 10-10-2021 a las 23:12:42
 -- Versión del servidor: 10.1.35-MariaDB
 -- Versión de PHP: 7.2.9
 
@@ -37,6 +37,14 @@ CREATE TABLE `contacto` (
   `fecha` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
+--
+-- Volcado de datos para la tabla `contacto`
+--
+
+INSERT INTO `contacto` (`id`, `nombre`, `correo`, `asunto`, `mensaje`, `fecha`) VALUES
+(1, 'edyson leal', 'edyson@gmail.com', 'Convocatoria final', 'Los convoco perrito yo te elijo picacku', '2021-10-06'),
+(2, 'edyson', 'edyson@gmail.com', 'prueba 2', 'Esta es una prueba perrito', '2021-10-05');
+
 -- --------------------------------------------------------
 
 --
@@ -67,9 +75,10 @@ CREATE TABLE `noticia` (
   `id` int(11) NOT NULL,
   `ruta_imagen` varchar(400) COLLATE utf8_spanish2_ci NOT NULL,
   `imagen` varchar(400) COLLATE utf8_spanish2_ci NOT NULL,
+  `titulo` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcion` varchar(1000) COLLATE utf8_spanish2_ci NOT NULL,
-  `fecha` date NOT NULL,
-  `lugar` varchar(100) COLLATE utf8_spanish2_ci NOT NULL,
+  `fecha` date DEFAULT NULL,
+  `lugar` varchar(100) COLLATE utf8_spanish2_ci DEFAULT NULL,
   `link` varchar(400) COLLATE utf8_spanish2_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -77,8 +86,9 @@ CREATE TABLE `noticia` (
 -- Volcado de datos para la tabla `noticia`
 --
 
-INSERT INTO `noticia` (`id`, `ruta_imagen`, `imagen`, `descripcion`, `fecha`, `lugar`, `link`) VALUES
-(1, 'prueba', 'prueba', 'El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.', '2021-08-16', 'Labateca', 'https://www.laopinion.com.co/entretenimiento/en-labateca-se-rueda-el-cortometraje-antes-de-morir?platform=hootsuite');
+INSERT INTO `noticia` (`id`, `ruta_imagen`, `imagen`, `titulo`, `descripcion`, `fecha`, `lugar`, `link`) VALUES
+(1, 'Archivos/imagenes/noticia/25.jpg', '25.jpg', 'Se rueda una pelicula en labateca', 'El equipo de producción está compuesto, casi en su totalidad, por jóvenes oriundos de Labateca, Pamplona y Cúcuta. El proyecto está siendo financiado por el Fondo de Desarrollo Cinematográfico en la categroría de Estímulo de Relatos Regionales en 2019.', '2021-08-16', 'Labateca', NULL),
+(4, 'Archivos/imagenes/noticia/AlEdy.jpeg', 'AlEdy.jpeg', 'prueba de sonido', 'Nos destruiran a todos', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -108,7 +118,9 @@ CREATE TABLE `persona` (
 
 INSERT INTO `persona` (`id`, `nombre`, `apellido`, `tipo_documento`, `documento`, `correo`, `contrasena`, `rol`, `imagen`, `ruta_imagen`, `fecha_inicio`, `fecha_fin`, `estado`) VALUES
 (1, 'edyson', 'leal', 1, '1234', 'edyson@gmail.com', '1234', 1, NULL, NULL, '2021-08-01', NULL, 1),
-(2, 'fabian', 'marin', 1, '123456', 'matias@gmail.com', '123456', 2, NULL, NULL, '2021-08-04', NULL, 0);
+(10, 'qwer', 'asdf', 1, '123', 'edy@gmail.com', '123', 2, 'IMG_20200619_191221.jpg', 'Archivos/imagenes/personal/IMG_20200619_191221.jpg', '2021-10-08', '2021-10-10', 1),
+(11, 'eee', 'eee', 1, '123444', 'edy@gmail.com', '123', 1, 'alexandra_3x4.jpg', 'Archivos/imagenes/personal/alexandra_3x4.jpg', '2021-10-08', NULL, 1),
+(12, 'Alexandra', 'leal', 1, '12345', 'edyson@gmail.com', '1234', 1, '1090474784.jpeg', 'Archivos/imagenes/personal/1090474784.jpeg', '2021-10-13', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -124,6 +136,16 @@ CREATE TABLE `pqrs` (
   `email` varchar(50) COLLATE utf8_spanish2_ci NOT NULL,
   `descripcion` varchar(100) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `pqrs`
+--
+
+INSERT INTO `pqrs` (`id`, `tipo`, `nombre`, `telefono`, `email`, `descripcion`) VALUES
+(1, 1, 'prueba', '333333', 'edysonleal3@gmail.com', 'Me obligaron a robar perros'),
+(2, 2, 'ppppp', '333333', 'edyson@gmail.com', 'holis la pa tofo'),
+(3, 1, 'edyson leal', '3508927334', 'edyson@gmail.com', 'prueba de pqrs'),
+(4, 1, 'edyson leal', '109999', 'edyson@gmail.com', 'lkdkkdkd');
 
 -- --------------------------------------------------------
 
@@ -142,7 +164,8 @@ CREATE TABLE `programacion` (
 --
 
 INSERT INTO `programacion` (`id`, `nombre`, `fecha_hora`) VALUES
-(1, 'Amanecer campesino', '2021-08-16 06:00:00');
+(22, 'Amanecer perro', '2021-10-10 17:51:00'),
+(23, 'Buenos dias sol', '2021-10-11 05:00:00');
 
 -- --------------------------------------------------------
 
@@ -188,7 +211,20 @@ INSERT INTO `sesion` (`id`, `identificacion`, `fecha`, `ip`) VALUES
 (10, '1234', '2021-08-05 18:54:39', '::1'),
 (11, '1234', '2021-08-05 18:55:44', '::1'),
 (12, '1234', '2021-08-05 19:06:53', '::1'),
-(13, '1234', '2021-08-16 19:09:28', '::1');
+(13, '1234', '2021-08-16 19:09:28', '::1'),
+(14, '1234', '2021-10-03 16:36:41', '::1'),
+(15, '1234', '2021-10-03 16:46:07', '::1'),
+(16, '1234', '2021-10-03 17:39:41', '::1'),
+(17, '1234', '2021-10-03 17:44:39', '::1'),
+(18, '1234', '2021-10-05 16:52:38', '::1'),
+(19, '1234', '2021-10-06 19:19:55', '::1'),
+(20, '1234', '2021-10-07 18:03:30', '::1'),
+(21, '1234', '2021-10-08 10:13:48', '::1'),
+(22, '1234', '2021-10-10 12:52:30', '::1'),
+(23, '12345', '2021-10-10 15:44:36', '::1'),
+(24, '12345', '2021-10-10 15:45:23', '::1'),
+(25, '123', '2021-10-10 16:05:57', '::1'),
+(26, '1234', '2021-10-10 16:09:33', '::1');
 
 -- --------------------------------------------------------
 
@@ -307,7 +343,7 @@ ALTER TABLE `tipo_pqrs`
 -- AUTO_INCREMENT de la tabla `contacto`
 --
 ALTER TABLE `contacto`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `documentacion`
@@ -319,25 +355,25 @@ ALTER TABLE `documentacion`
 -- AUTO_INCREMENT de la tabla `noticia`
 --
 ALTER TABLE `noticia`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `persona`
 --
 ALTER TABLE `persona`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `pqrs`
 --
 ALTER TABLE `pqrs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `programacion`
 --
 ALTER TABLE `programacion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -349,7 +385,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `sesion`
 --
 ALTER TABLE `sesion`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_documento`

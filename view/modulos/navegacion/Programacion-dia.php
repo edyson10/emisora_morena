@@ -50,7 +50,7 @@
                             <label for="inputEmail3" class="col-sm-5 col-form-label">Hora programaci&oacute;n</label>
                             <div class="col-sm-7">
                                 <div class="input-group date" id="timepicker" data-target-input="nearest">
-                                    <input type="text" class="form-control datetimepicker-input" data-target="#timepicker" id="horaProgramacion" name="horaProgramacion"/>
+                                    <input type="text" class="form-control datetimepicker-input" data-target="#timepicker" id="horaProgramacion" name="horaProgramacion" />
                                     <div class="input-group-append" data-target="#timepicker" data-toggle="datetimepicker">
                                         <div class="input-group-text"><i class="far fa-clock"></i></div>
                                     </div>
@@ -75,14 +75,14 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card card-info">
                         <div class="card-header">
                             <h3 class="card-title">Programaci&oacute;n diaria</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered ">
-                                <thead class="thead-dark">
+                                <thead class="bg-info">
                                     <tr>
                                         <th>ID</th>
                                         <th>Nombre</th>

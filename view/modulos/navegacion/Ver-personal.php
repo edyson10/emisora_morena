@@ -45,10 +45,10 @@
                                     $query = $conexion->query("SELECT * FROM persona ORDER BY documento, estado ASC");
                                     while ($row = mysqli_fetch_array($query)) {
                                         if (isset($row['imagen'])) {
-                                            //$imagen = "model/Archivos/imagenes/personal/" . $row['imagen'];
-                                            $imagen = "view/presentacion/admin/dist/img/user2-160x160.jpg";
+                                            $imagen = "model/Archivos/imagenes/personal/" . $row['imagen'];
+                                            
                                         } else {
-                                            $imagen = "view/presentacion/admin/dist/img/user2-160x160.jpg";
+                                            $imagen = "view/presentacion/admin/dist/img/user_1.png";
                                         }
                                         if ($row["estado"] == '1') {
                                             $estado = "<span class='badge badge-success'>Activo</span>";

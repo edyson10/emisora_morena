@@ -2,10 +2,6 @@
 
 require_once 'conexion.php';
 
-//die(json_encode($_POST));
-
-//die(json_encode($_FILES));
-
 $titulo = $_POST['tituloNoticia'];
 $descripcion = $_POST['descripcionNoticia'];
 $fecha = $_POST['fechaNoticia'];
