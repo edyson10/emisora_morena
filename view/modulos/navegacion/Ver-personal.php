@@ -42,7 +42,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = $conexion->query("SELECT * FROM persona ORDER BY documento, estado ASC");
+                                    $query = $conexion->query("SELECT p.id, p.nombre, p.apellido, p.documento, r.descripcion AS rol, p.estado, p.correo FROM persona p INNER JOIN rol r ON p.rol = r.id ORDER BY p.documento, p.estado ASC");
                                     while ($row = mysqli_fetch_array($query)) {
                                         if (isset($row['imagen'])) {
                                             $imagen = "model/Archivos/imagenes/personal/" . $row['imagen'];

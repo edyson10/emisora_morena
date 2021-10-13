@@ -343,3 +343,54 @@ $(document).ready(function () {
     },
   });
 });
+
+
+/*
+METODO PARA ENVIAR COMENTARIO
+*/
+$(document).ready(function () {
+  $("#FormEnviarComentario").validate({
+    rules: {
+      comentario: { required: true },
+    },
+    messages: {
+      comentario: { required: "Debe de completar los campos." 
+    },
+    errorElement: "span",
+    errorPlacement: function (error, element) {
+      error.addClass("invalid-feedback");
+      element.closest(".form-group").append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass("is-invalid");
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass("is-invalid");
+    },
+    submitHandler: function () {
+      var datos = {
+        comentario: $("#comentario").val()
+      };
+      $.ajax({
+        url: "model/registrarComentario.php",
+        method: "post",
+        data: datos,
+        dataType: "json",
+        type: "POST",
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          if (data.respuesta == "exito") {
+            ingresoExitoso("Exito!", "Se envio correctamente su comentario.");
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          } else {
+            respuestaError("Error!", "Ocurrio un error al enviar su comentario.");
+          }
+        },
+      });
+    },
+  });
+});
