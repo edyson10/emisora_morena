@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 if (isset($_SESSION['rol'])) {
     header('Location: Administracion');
@@ -12,7 +12,8 @@ if (isset($_SESSION['rol'])) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login EMS 98.2</title>
-
+    <!-- Icono pagina -->
+    <link rel="icon" href="view/presentacion/img/logoemisora.png" sizes="16x16" />
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
