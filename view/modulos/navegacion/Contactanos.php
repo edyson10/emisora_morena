@@ -3,7 +3,7 @@
     <div class="container-fluid">
       <div class="row tm-brand-row">
         <div class="col-lg-4 col-11">
-          <div class="tm-brand-container tm-bg-white-transparent">
+          <div class="tm-brand-container">
             <img src="view/presentacion/img/logoemisora.png" width="300" height="200">
           </div>
         </div>
