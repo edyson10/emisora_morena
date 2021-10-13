@@ -129,6 +129,7 @@ $(document).ready(function () {
         async: true,
         cache: false,
         success: function (data) {
+          //console.log(data)
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Exito!",
@@ -140,7 +141,11 @@ $(document).ready(function () {
           } else if (data.respuesta == "vacio") {
             respuestaError("Error!", "Debe de completar los campos.");
           } else if (data.respuesta == "error") {
-            respuestaError("Error!", "Error al subir la noticia");
+            respuestaError("Error!", "Error al subir la noticia.");
+          } else if (data.respuesta == "noformato") {
+            respuestaError("Error!", "Debe de elegir una foto con extensión .jpg, .jpeg, .png.");
+          } else if (data.respuesta == "notamano") {
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 4MB.");
           }
         },
       });
@@ -344,17 +349,16 @@ $(document).ready(function () {
   });
 });
 
-
-/*
-METODO PARA ENVIAR COMENTARIO
-*/
+/**
+ * METODO PARA REGISTRAR UN COMENTARIO
+ */
 $(document).ready(function () {
   $("#FormEnviarComentario").validate({
     rules: {
       comentario: { required: true },
     },
     messages: {
-      comentario: { required: "Debe de completar los campos." 
+      comentario: { required: "Debe de completar los campos." },
     },
     errorElement: "span",
     errorPlacement: function (error, element) {
@@ -369,7 +373,7 @@ $(document).ready(function () {
     },
     submitHandler: function () {
       var datos = {
-        comentario: $("#comentario").val()
+        comentario: $("#comentario").val(),
       };
       $.ajax({
         url: "model/registrarComentario.php",
@@ -394,3 +398,5 @@ $(document).ready(function () {
     },
   });
 });
+
+

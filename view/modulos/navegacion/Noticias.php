@@ -33,7 +33,7 @@
               $link = "<a style='color:#140494' href='" . $row[7] . "' target='_blank'>Ver más</a>";
             }
 
-            if (empty($row[5]) || $row[5] == NULL) {
+            if (empty($row[5]) || $row[5] == NULL || $row[5] == '0000-00-00') {
               $date = "";
             } else {
               $date = "<p class='tm-about-description'> En " . utf8_encode($row[6]) . ' el día ' . utf8_encode($row[5]) . "</p>";
