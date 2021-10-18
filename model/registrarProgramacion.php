@@ -2,6 +2,8 @@
 
 require_once 'conexion.php';
 
+$conexion->query("SET NAMES 'UTF8' ");
+
 //die(json_encode($_POST));
 
 $nombre = $_POST['nombreProgramacion'];
@@ -18,6 +20,8 @@ if ($hour[1] == "AM") {
 }
 
 $fechaHora = $fecha . " " . $time;
+
+//die(json_encode($fechaHora));
 
 $sql = $conexion->query("INSERT INTO programacion (id, nombre, fecha_hora) VALUES (NULL, '$nombre', '$fechaHora')");
 

@@ -2,6 +2,8 @@
 
 require_once 'conexion.php';
 
+$conexion->query("SET NAMES 'UTF8' ");
+
 $rol = $_POST['rol'];
 
 $sql = $conexion->query("INSERT INTO rol (id, descripcion) VALUES (NULL, '$rol')");
