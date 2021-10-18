@@ -35,7 +35,7 @@
                                     echo $row[0];
                                     ?>
                                 </h3>
-                                <p>Noticias registradas</p>
+                                <p>Noticias Registradas</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-clipboard"></i>
@@ -75,7 +75,7 @@
                                     echo $row[0];
                                     ?>
                                 </h3>
-                                <p>Usuarios registrados</p>
+                                <p>Usuarios Registrados</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
@@ -95,7 +95,7 @@
                                     echo $row[0];
                                     ?>
                                 </h3>
-                                <p>PQRS Registrados</p>
+                                <p>PQRS Recibidos</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-chatboxes"></i>
@@ -117,7 +117,7 @@
                                     echo $row[0];
                                     ?>
                                 </h3>
-                                <p>Contactos registrados</p>
+                                <p>Correos recibidos de Contacto</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-mail"></i>
@@ -142,7 +142,7 @@
                                 echo $row[0];
                                 ?>
                             </h3>
-                            <p>Noticias registradas</p>
+                            <p>Noticias Registradas</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-bag"></i>
@@ -151,8 +151,7 @@
                     </div>
                 </div>
                 <!-- ./col -->
-            </div>
-            
+            </div>  
         </div>
         <?php }
         ?>
