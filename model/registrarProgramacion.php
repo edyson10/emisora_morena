@@ -13,15 +13,22 @@ $hora = $_POST['horaProgramacion'];
 $hour = explode(" ", $hora);
 
 if ($hour[1] == "AM") {
-    $time = $hour[0] . ":00";
+    $horas = explode(":", $hour[0]);
+    if ($horas[0] == "12") {
+        $time = "00:" . $horas[1] . ":00";
+    } else {
+        $time = $hour[0] . ":00";
+    }
 } else {
     $horas = explode(":", $hour[0]);
-    $time = ($horas[0] + 12) . ":" . $horas[1] . ":00";
+    if ($horas[0] == "12") {
+        $time = ($horas[0]) . ":" . $horas[1] . ":00";
+    } else {
+        $time = ($horas[0] + 12) . ":" . $horas[1] . ":00";
+    }
 }
 
 $fechaHora = $fecha . " " . $time;
-
-//die(json_encode($fechaHora));
 
 $sql = $conexion->query("INSERT INTO programacion (id, nombre, fecha_hora) VALUES (NULL, '$nombre', '$fechaHora')");
 
