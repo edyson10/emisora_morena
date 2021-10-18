@@ -128,6 +128,9 @@ $(document).ready(function () {
         processData: false,
         async: true,
         cache: false,
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
         success: function (data) {
           //console.log(data)
           if (data.respuesta == "exito") {
