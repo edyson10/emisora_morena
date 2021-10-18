@@ -2,6 +2,8 @@
 
 require_once 'conexion.php';
 
+$conexion->query("SET NAMES 'UTF8' ");
+
 //die(json_encode($_POST));
 
 $comentario = $_POST['comentario'];

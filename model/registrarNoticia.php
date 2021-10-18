@@ -2,6 +2,8 @@
 
 require_once 'conexion.php';
 
+$conexion->query("SET NAMES 'UTF8' ");
+
 $titulo = $_POST['tituloNoticia'];
 $descripcion = $_POST['descripcionNoticia'];
 $fecha = $_POST['fechaNoticia'];
