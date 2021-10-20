@@ -46,7 +46,6 @@ $(document).ready(function () {
             respuestaInfoEspera("Registrando... ¡Espere por favor!");
           },
           success: function (data) {
-            console.log("=> " + data);
             if (data.respuesta == "exito") {
               ingresoExitoso("Exito!", "Se envio correctamente su correo.");
               setTimeout(function () {

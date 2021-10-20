@@ -179,7 +179,7 @@ if (isset($_GET["ubicacion"])) {
         </body>
 
         </html>
-    <?php } else if ($_GET["ubicacion"] == "Privado") {
+    <?php } else if ($_GET["ubicacion"] == "Privado" || $_GET["ubicacion"] == "Recuperar-contraseña") {
         include_once 'model/conexion.php';
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if (

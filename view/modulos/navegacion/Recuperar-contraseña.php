@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (isset($_SESSION['rol'])) {
-    header('Location: Administracion');
-}
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -28,63 +21,34 @@ if (isset($_SESSION['rol'])) {
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
                 <a href="" class="h1"><b>Administraci&oacute;n</a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">Inicio de sesi&oacute;n</p>
-                <form name="FormLogin" id="FormLogin" method="POST">
+                <p class="login-box-msg">¿Olvidaste tu contraseña? Aquí puede recuperar fácilmente una nueva contraseña.</p>
+                <form name="FormRecuperarPass" id="FormRecuperarPass" method="POST">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Documento" id="ingresarCorreo" name="ingresarCorreo">
+                        <input type="email" name="emailForgot" id="emailForgot" class="form-control" placeholder="Ingrese su correo">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-envelope"></span>
                             </div>
                         </div>
                     </div>
-                    <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Contrase&ntilde;a" id="ingresarContrasena" name="ingresarContrasena">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="input-group mb-3">
-                        <select class="custom-select rounded-0" id="ingresarTipo" name="ingresarTipo">
-                            <?php
-                            $query = $conexion->query("SELECT * FROM rol ORDER BY descripcion ASC");
-                            while ($valores = mysqli_fetch_array($query)) {
-                                echo '<option value="' . $valores['id'] . '">' . utf8_encode($valores['descripcion']) . '</option>';
-                            }
-                            ?>
-                        </select>
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-user"></span>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
-                        <div class="col-6">
-                            <button type="submit" class="btn btn-primary btn-block">Iniciar sesi&oacute;n</button>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary btn-block">Enviar contrase&ntilde;a</button>
                         </div>
-                        <!-- /.col -->
-                        <div class="col-6"></div>
                         <!-- /.col -->
                     </div>
                 </form>
-                <!-- /.social-auth-links -->
-                <br>
-                <p class="mb-1">
-                    <a href="Recuperar-contraseña">¿Olvidaste su contraseña?</a>
+                <p class="mt-3 mb-1">
+                    <a href="Privado">Iniciar sesi&oacute;n</a>
                 </p>
             </div>
-            <!-- /.card-body -->
+            <!-- /.login-card-body -->
         </div>
-        <!-- /.card -->
     </div>
     <!-- /.login-box -->
 
@@ -101,7 +65,7 @@ if (isset($_SESSION['rol'])) {
     <script src="view/presentacion/admin/plugins/jquery-validation/jquery.validate.min.js"></script>
     <script src="view/presentacion/admin/plugins/jquery-validation/additional-methods.min.js"></script>
 
-    <script src="view/presentacion/js/login.js"></script>
+    <script src="view/presentacion/js/forgot_pass.js"></script>
 </body>
 
 </html>
