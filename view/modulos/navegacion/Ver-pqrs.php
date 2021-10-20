@@ -31,19 +31,30 @@
                                 <thead class="bg-info">
                                     <tr>
                                         <th>ID</th>
-                                        <th>Titulo</th>
-                                        <th>descripci&oacute;n</th>
-                                        <th>Fecha</th>
-                                        <th>Lugar</th>
-                                        <th>Link</th>
+                                        <th>Tipo</th>
+                                        <th>Nombre</th>
+                                        <th>Tel&eacute;fono</th>
+                                        <th>Correo</th>
+                                        <th>Descripci&oacute;n</th>
+                                        <th>Estado</th>
                                         <th>Acci&oacute;n</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = $conexion->query("SELECT p.id, tp.descripcion AS tipo_pqrs, p.nombre, p.telefono, p.email, p.descripcion FROM pqrs p INNER JOIN tipo_pqrs tp ON tp.id = p.tipo");
+                                    $query = $conexion->query("SELECT p.id, tp.descripcion AS tipo_pqrs, p.nombre, p.telefono, p.email, p.descripcion, p.estado FROM pqrs p INNER JOIN tipo_pqrs tp ON tp.id = p.tipo");
                                     while ($row = mysqli_fetch_array($query)) {
-                                        $botones = "<a class='btn btn-success' onclick='eliminarNoticia(" . $row["id"] . ")'><i class='fas fa-check'></i></a>";
+                                        if ($row['estado'] == "1") {
+                                            $botones = "<a class='btn btn-success' onclick='eliminarPQRS(" . $row["id"] . ")'><i class='fas fa-check'></i></a>";
+                                        } else {
+                                            $botones = "";
+                                        }
+
+                                        if ($row['estado'] == "1") {
+                                            $estado = "<span class='badge badge-warning' style='color:white;'>Sin respuesta</span>";
+                                        } else {
+                                            $estado = "<span class='badge badge-success' style='color:white;'>Se dio respuesta</span>";
+                                        }
                                         echo "<tr>
                                             <td>" . $row["id"] . "</td>
                                             <td>" . utf8_encode($row["tipo_pqrs"]) . "</td>
@@ -51,6 +62,7 @@
                                             <td>" . $row["telefono"] . "</td>
                                             <td>" . utf8_encode($row["email"]) . "</td>
                                             <td>" . utf8_encode($row["descripcion"]) . "</td>
+                                            <td>" . $estado . "</td>
                                             <td class='text-center py-0 align-middle'>
                                                 <div class='btn-group btn-group-sm'>" . $botones . "</div>
                                             </td>

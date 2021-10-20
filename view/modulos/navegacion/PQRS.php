@@ -26,8 +26,6 @@
       <div class="col-12 tm-home-container">
         <div class="col-lg-12 tm-contact-col-right">
           <div class="tm-bg-white-transparent tm-contact-text">
-
-
             <h2 class="font-weight-bold"> </h2>
             <h1 class="font-weight-bold">REGISTRO PQRS</h1>
             <h2 class="font-weight-bold"> </h2>

@@ -222,3 +222,48 @@ function eliminarDocumento(id) {
         }
     })
 }
+
+/*
+METODO PARA CAMBIAR EL ESTADO DE PQRS   
+*/
+function eliminarPQRS(id) {
+    Swal.fire({
+        title: 'Respuesta',
+        text: "¿Seguro que enviaste una respuesta a este PQRS?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, dar respuesta'
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url: 'model/eliminar.php',
+                data: { eliminar: 'eliminarPQRS', id: id },
+                type: 'POST',
+                beforeSend: function () {
+                    respuestaInfoEspera("¡Espere por favor!");
+                },
+                success: function (data) {
+                    var resultado = JSON.parse(data);
+                    if (resultado.respuesta == 'exito') {
+                        Swal.fire(
+                            'Eliminado!',
+                            'Se le ha dado una respuesta correctamente.',
+                            'success'
+                        )
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'No se pudo eliminar!'
+                        })
+                    }
+                }
+            });
+        }
+    })
+}
