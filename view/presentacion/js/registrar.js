@@ -339,4 +339,52 @@ $(document).ready(function () {
   });
 });
 
-
+/*
+METODO PARA REGISTRAR NOTICIA
+*/
+$(document).ready(function () {
+  $("#FormSubirDocumento").on("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(this);
+    if (document.getElementById("fileDocumento").files.length == 0) {
+      Swal.fire({
+        icon: "error",
+        title: "¡Ups!",
+        text: "No se ha cargado ningún archivo",
+      });
+    } else {
+      $.ajax({
+        url: "model/registrarDocumento.php",
+        data: datos,
+        type: $(this).attr("method"),
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        async: true,
+        cache: false,
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          if (data.respuesta == "exito") {
+            ingresoExitoso(
+              "¡Exito!",
+              "Se ha registrado correctamente la noticia."
+            );
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          } else if (data.respuesta == "vacio") {
+            respuestaError("Error!", "Debe de completar los campos.");
+          } else if (data.respuesta == "error") {
+            respuestaError("Error!", "Error al subir la noticia.");
+          } else if (data.respuesta == "noformato") {
+            respuestaError("Error!", "Debe de elegir una foto con extensión .docx, .doc, .pdf.");
+          } else if (data.respuesta == "notamano") {
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 4MB.");
+          }
+        },
+      });
+    }
+  });
+});

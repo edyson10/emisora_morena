@@ -177,3 +177,48 @@ function eliminarNoticia(id) {
         }
     })
 }
+
+/*
+METODO PARA ELIMINAR UN DOCUMENTO   
+*/
+function eliminarDocumento(id) {
+    Swal.fire({
+        title: 'Eliminar',
+        text: "¿Seguro que quieres eliminar este documento?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar'
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url: 'model/eliminar.php',
+                data: { eliminar: 'eliminarDocumento', id: id },
+                type: 'POST',
+                beforeSend: function () {
+                    respuestaInfoEspera("¡Espere por favor!");
+                },
+                success: function (data) {
+                    var resultado = JSON.parse(data);
+                    if (resultado.respuesta == 'exito') {
+                        Swal.fire(
+                            'Eliminado!',
+                            'El documento ha sido eliminado.',
+                            'success'
+                        )
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'No se pudo eliminar!'
+                        })
+                    }
+                }
+            });
+        }
+    })
+}
