@@ -25,7 +25,7 @@
       <section class="row tm-testimonials-section">
         <div class="col-12 tm-carousel">
           <?php
-          $query = $conexion->query("SELECT * FROM noticia ORDER BY id ASC LIMIT 6");
+          $query = $conexion->query("SELECT * FROM noticia ORDER BY id DESC LIMIT 9");
           while ($row = mysqli_fetch_array($query)) {
             if (empty($row[7]) || $row[7] == NULL) {
               $link = "";

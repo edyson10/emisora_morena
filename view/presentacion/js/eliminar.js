@@ -248,7 +248,7 @@ function eliminarPQRS(id) {
                     var resultado = JSON.parse(data);
                     if (resultado.respuesta == 'exito') {
                         Swal.fire(
-                            'Eliminado!',
+                            'Respuesta dada.',
                             'Se le ha dado una respuesta correctamente.',
                             'success'
                         )

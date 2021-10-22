@@ -47,10 +47,10 @@
                                          */
                                         echo "<tr>
                                             <td>" . $row["fecha"] . "</td>
-                                            <td>" . $row["nombre"] . "</td>
-                                            <td>" . $row["correo"] . "</td>
-                                            <td>" . $row["asunto"] . "</td>
-                                            <td>" . $row["mensaje"] . "</td>
+                                            <td>" . utf8_encode($row["nombre"]) . "</td>
+                                            <td>" . utf8_encode($row["correo"]) . "</td>
+                                            <td>" . utf8_encode($row["asunto"]) . "</td>
+                                            <td>" . utf8_encode($row["mensaje"]) . "</td>
                                         </tr>";
                                     }
                                     ?>

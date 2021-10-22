@@ -369,7 +369,7 @@ $(document).ready(function () {
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Exito!",
-              "Se ha registrado correctamente la noticia."
+              "Se ha subido correctamente el documento."
             );
             setTimeout(function () {
               location.reload();
@@ -377,7 +377,7 @@ $(document).ready(function () {
           } else if (data.respuesta == "vacio") {
             respuestaError("Error!", "Debe de completar los campos.");
           } else if (data.respuesta == "error") {
-            respuestaError("Error!", "Error al subir la noticia.");
+            respuestaError("Error!", "Error al subir el documento.");
           } else if (data.respuesta == "noformato") {
             respuestaError("Error!", "Debe de elegir una foto con extensión .docx, .doc, .pdf.");
           } else if (data.respuesta == "notamano") {

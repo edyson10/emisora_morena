@@ -78,17 +78,19 @@
                                 <tbody>
                                     <?php
                                     $query = $conexion->query("SELECT * FROM documentacion");
+                                    $i = 1;
                                     while ($row = mysqli_fetch_array($query)) {
                                         $botones = 
                                         "<a class='btn btn-success' style='margin: 10px' href='model/" . $row["ruta_documento"] . "' download><i class='fas fa-file-pdf' title='Ver Solicitud'></i></a>
                                         <a class='btn btn-danger' style='margin: 10px' onclick='eliminarDocumento(" . $row["id"] . ")'><i class='fas fa-trash'></i></a>";
                                         echo "<tr>
-                                            <td>" . $row["id"] . "</td>
+                                            <td>" . $i . "</td>
                                             <td>" . $row["titulo"] . "</td>
                                             <td class='text-center py-0 align-middle'>
                                                 <div class='btn-group btn-group-sm'>" . $botones . "</div>
                                             </td>
                                         </tr>";
+                                        $i++;
                                     }
                                     ?>
                                 </tbody>
