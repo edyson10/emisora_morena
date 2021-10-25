@@ -42,7 +42,7 @@
                                     p.documento = s.identificacion");
                                     while ($row = mysqli_fetch_array($query)) {
                                         echo "<tr>
-                                            <td>" . $row["nombre"] . " " . $row["apellido"] . "</td>
+                                            <td>" . utf8_encode($row["nombre"] . " " . $row["apellido"]) . "</td>
                                             <td>" . $row["fecha"] . "</td>
                                             <td>" . $row["ip"] . "</td>
                                         </tr>";
