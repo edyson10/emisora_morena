@@ -67,8 +67,8 @@
                                                     <img style='width: 50px; height: 50px;' src='" . $imagen . "' alt='User Image'>
                                                 </div>
                                             </td>
-                                            <td>" . $row["nombre"] . "</td>
-                                            <td>" . $row["apellido"] . "</td>
+                                            <td>" . utf8_encode($row["nombre"]) . "</td>
+                                            <td>" . utf8_encode($row["apellido"]) . "</td>
                                             <td>" . $row["documento"] . "</td>
                                             <td>" . $row["correo"] . "</td>
                                             <td>" . $row["rol"] . "</td>
