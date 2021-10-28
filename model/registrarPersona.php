@@ -37,7 +37,7 @@ if (
             if (!is_dir($directorio)) {
                 mkdir($directorio, 0755, true);
             }
-            if ($_FILES['foto']['size'] <= 4000000) {
+            if ($_FILES['foto']['size'] <= 40000000) {
                 if (($_FILES["foto"]["type"] == "image/gif")
                     || ($_FILES["foto"]["type"] == "image/jpeg")
                     || ($_FILES["foto"]["type"] == "image/jpg")

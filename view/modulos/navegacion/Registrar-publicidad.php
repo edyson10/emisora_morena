@@ -5,12 +5,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">Registrar noticia</h1>
+                    <h1 class="m-0">Registrar publicidad</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="Administracion">Inicio</a></li>
-                        <li class="breadcrumb-item active">Registrar noticia</li>
+                        <li class="breadcrumb-item active">Registrar publicidad</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -26,11 +26,11 @@
                     <!-- Horizontal Form -->
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Registrar noticia</h3>
+                            <h3 class="card-title">Registrar publicidad</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" id="FormRegistroNoticia" name="FormRegistroNoticia" method="POST" enctype="multipart/form-data">
+                        <form class="form-horizontal" id="FormRegistroPublicidad" name="FormRegistroPublicidad" method="POST" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="alert alert-info alert-dismissible">
                                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true"></button>
@@ -42,20 +42,20 @@
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-4 col-form-label">Titulo *</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="tituloNoticia" name="tituloNoticia" placeholder="Ingrese un titulo de la noticia">
+                                                <input type="text" class="form-control" id="tituloPublicidad" name="tituloPublicidad" placeholder="Ingrese un titulo de la noticia">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-4 col-form-label">Descripci&oacute;n *</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="descripcionNoticia" name="descripcionNoticia" placeholder="Ingrese una descripci&oacute;n de la noticia">
+                                                <input type="text" class="form-control" id="descripcionPublicidad" name="descripcionPublicidad" placeholder="Ingrese una descripci&oacute;n de la publicidad">
                                             </div>
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-4 col-form-label">Imagen *</label>
                                             <div class="col-sm-8">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="fotoNoticia" name="fotoNoticia">
+                                                    <input type="file" class="custom-file-input" id="fotoPublicidad" name="fotoPublicidad">
                                                     <label class="custom-file-label" for="customFile">Seleccione el archivo</label>
                                                 </div>
                                             </div>
@@ -63,21 +63,15 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group row">
-                                            <label for="inputEmail3" class="col-sm-4 col-form-label">Lugar (Opcional)</label>
+                                            <label for="inputPassword3" class="col-sm-4 col-form-label">Link Facebook (Opcional)</label>
                                             <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="lugarNoticia" name="lugarNoticia" placeholder="Ingrese un lugar">
+                                                <input type="text" class="form-control" id="linkFacebook" name="linkFacebook" placeholder="Ingrese el link de Facebook">
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-4 col-form-label">Fecha (Opcional)</label>
+                                            <label for="inputPassword3" class="col-sm-4 col-form-label">Link Instagram (Opcional)</label>
                                             <div class="col-sm-8">
-                                                <input type="date" class="form-control" id="fechaNoticia" name="fechaNoticia" placeholder="Ingrese una fecha">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="inputPassword3" class="col-sm-4 col-form-label">Link (Opcional)</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" class="form-control" id="linkNoticia" name="linkNoticia" placeholder="Ingrese un link de la noticia">
+                                                <input type="text" class="form-control" id="linkInstagram" name="linkInstagram" placeholder="Ingrese el link de Instagram">
                                             </div>
                                         </div>
                                     </div>

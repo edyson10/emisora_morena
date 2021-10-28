@@ -41,7 +41,7 @@ $(document).ready(function () {
               "Debe de elegir una foto con extensión .jpg, .jpeg, .png."
             );
           } else if (data.respuesta == "notamano") {
-            respuestaError("Error!", "Debe de elegir un tamaño menor a 4MB.");
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 40MB.");
           } else if (data.respuesta == "vacio") {
             respuestaError("Error!", "Debe de completar los campos.");
           } else if (data.respuesta == "docrepetido") {
@@ -147,7 +147,7 @@ $(document).ready(function () {
           } else if (data.respuesta == "noformato") {
             respuestaError("Error!", "Debe de elegir una foto con extensión .jpg, .jpeg, .png.");
           } else if (data.respuesta == "notamano") {
-            respuestaError("Error!", "Debe de elegir un tamaño menor a 4MB.");
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 40MB.");
           }
         },
       });
@@ -381,7 +381,57 @@ $(document).ready(function () {
           } else if (data.respuesta == "noformato") {
             respuestaError("Error!", "Debe de elegir una foto con extensión .docx, .doc, .pdf.");
           } else if (data.respuesta == "notamano") {
-            respuestaError("Error!", "Debe de elegir un tamaño menor a 4MB.");
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 40MB.");
+          }
+        },
+      });
+    }
+  });
+});
+
+/*
+METODO PARA REGISTRAR NOTICIA
+*/
+$(document).ready(function () {
+  $("#FormRegistroPublicidad").on("submit", function (e) {
+    e.preventDefault();
+    var datos = new FormData(this);
+    if (document.getElementById("fotoPublicidad").files.length == 0) {
+      Swal.fire({
+        icon: "error",
+        title: "¡Ups!",
+        text: "No se ha cargado ningún archivo",
+      });
+    } else {
+      $.ajax({
+        url: "model/registrarPublicidad.php",
+        data: datos,
+        type: $(this).attr("method"),
+        dataType: "json",
+        contentType: false,
+        processData: false,
+        async: true,
+        cache: false,
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          if (data.respuesta == "exito") {
+            ingresoExitoso(
+              "¡Exito!",
+              "Se ha registrado correctamente la publicidad."
+            );
+            setTimeout(function () {
+              window.location.href = "Ver-publicidad";
+            }, 1000);
+          } else if (data.respuesta == "vacio") {
+            respuestaError("Error!", "Debe de completar los campos.");
+          } else if (data.respuesta == "error") {
+            respuestaError("Error!", "Error al subir la publicidad.");
+          } else if (data.respuesta == "noformato") {
+            respuestaError("Error!", "Debe de elegir una foto con extensión .jpg, .jpeg, .png.");
+          } else if (data.respuesta == "notamano") {
+            respuestaError("Error!", "Debe de elegir un tamaño menor a 40MB.");
           }
         },
       });

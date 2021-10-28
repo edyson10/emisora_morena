@@ -267,3 +267,48 @@ function eliminarPQRS(id) {
         }
     })
 }
+
+/*
+METODO PARA ELIMINAR UNA PUBLICIDAD  
+*/
+function eliminarPublicidad(id) {
+    Swal.fire({
+        title: 'Eliminar',
+        text: "¿Seguro que quieres eliminar este documento?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Si, eliminar'
+    }).then((result) => {
+        if (result.value) {
+            $.ajax({
+                url: 'model/eliminar.php',
+                data: { eliminar: 'eliminarPublicidad', id: id },
+                type: 'POST',
+                beforeSend: function () {
+                    respuestaInfoEspera("¡Espere por favor!");
+                },
+                success: function (data) {
+                    var resultado = JSON.parse(data);
+                    if (resultado.respuesta == 'exito') {
+                        Swal.fire(
+                            'Respuesta dada.',
+                            'La publicidad ha sido eliminada.',
+                            'success'
+                        )
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
+                    } else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Error',
+                            text: 'No se pudo eliminar!'
+                        })
+                    }
+                }
+            });
+        }
+    })
+}

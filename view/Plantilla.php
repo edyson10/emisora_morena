@@ -2,7 +2,7 @@
 if (isset($_GET["ubicacion"])) {
     if (
         $_GET["ubicacion"] == "Inicio" || $_GET["ubicacion"] == "Nosotros" || $_GET["ubicacion"] == "Contactanos"
-        || $_GET["ubicacion"] == "PQRS" || $_GET["ubicacion"] == "Noticias"
+        || $_GET["ubicacion"] == "PQRS" || $_GET["ubicacion"] == "Noticias" || $_GET["ubicacion"] == "Publicidad"
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -26,6 +26,8 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick.css" />
             <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick-theme.css" />
             <link rel="stylesheet" href="view/presentacion/css/templatemo-style.css" />
+            <!-- Font Awesome -->
+            <link rel="stylesheet" href="view/presentacion/admin/plugins/fontawesome-free/css/all.min.css">
         </head>
 
         <?php
@@ -47,7 +49,8 @@ if (isset($_GET["ubicacion"])) {
 
         <script src="view/presentacion/js/registrar.js"></script>
         <script src="view/presentacion/js/eliminar.js"></script>
-
+        <script src="view/presentacion/js/ver.js"></script>
+        
         <script>
             $(function() {
                 $('.tabgroup > div').hide();
@@ -183,10 +186,11 @@ if (isset($_GET["ubicacion"])) {
         include_once 'model/conexion.php';
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if (
-        $_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Ver-personal"
-        || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Ver-noticia"
-        || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Documentacion" || $_GET["ubicacion"] == "Programacion-dia"
-        || $_GET["ubicacion"] == "Ver-pqrs" || $_GET["ubicacion"] == "Ver-correo"
+        $_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Documentacion"  ||  $_GET["ubicacion"] == "Programacion-dia" 
+        || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Registrar-publicidad" 
+        || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Ver-correo" 
+        || $_GET["ubicacion"] == "Ver-noticia" || $_GET["ubicacion"] == "Ver-personal"|| $_GET["ubicacion"] == "Ver-publicidad" 
+        || $_GET["ubicacion"] == "Ver-pqrs" 
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">
@@ -302,6 +306,7 @@ if (isset($_GET["ubicacion"])) {
             <script src="view/presentacion/js/registrar.js"></script>
             <script src="view/presentacion/js/eliminar.js"></script>
             <!--<script src="view/presentacion/js/app.js"></script>-->
+            <script src="view/presentacion/js/ver.js"></script>
             <script>
                 $(function() {
                     //Timepicker

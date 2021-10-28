@@ -27,6 +27,10 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Publicidad">Publicidad</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Contactanos">Contáctanos</a>
                             </li>
                         <?php } else if ($_GET["ubicacion"] == "Nosotros") { ?>
@@ -45,6 +49,10 @@
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Noticias">Noticias</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Publicidad">Publicidad</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -69,6 +77,10 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Publicidad">Publicidad</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Contactanos">Contáctanos</a>
                             </li>
                         <?php } else if ($_GET["ubicacion"] == "Noticias") { ?>
@@ -87,6 +99,10 @@
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Noticias">Noticias <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Publicidad">Publicidad</a>
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
@@ -109,9 +125,38 @@
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Noticias">Noticias</a>
                             </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Publicidad">Publicidad</a>
+                            </li>
                             <li class="nav-item green-highlight active">
                                 <div class="tm-nav-link-highlight"></div>
                                 <a class="nav-link" href="Contactanos">Contáctanos <span class="sr-only">(current)</span></a>
+                            </li>
+                    <?php } else if ($_GET["ubicacion"] == "Publicidad") { ?>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Inicio">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Nosotros">Nosotros</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="PQRS">PQRS</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Noticias">Noticias</a>
+                            </li>
+                            <li class="nav-item green-highlight active">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Publicidad">Publicidad <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="tm-nav-link-highlight"></div>
+                                <a class="nav-link" href="Noticias">Noticias</a>
                             </li>
                     <?php }
                     } ?>

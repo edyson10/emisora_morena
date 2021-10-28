@@ -18,7 +18,7 @@ if (empty($titulo) || empty($descripcion)) {
     if (!is_dir($directorio)) {
         mkdir($directorio, 0755, true);
     }
-    if ($_FILES['fotoNoticia']['size'] <= 4000000) {
+    if ($_FILES['fotoNoticia']['size'] <= 40000000) {
         if (($_FILES["fotoNoticia"]["type"] == "image/gif")
             || ($_FILES["fotoNoticia"]["type"] == "image/jpeg")
             || ($_FILES["fotoNoticia"]["type"] == "image/jpg")

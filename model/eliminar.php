@@ -63,4 +63,14 @@ if ($_POST['eliminar'] == 'eliminarRol') {
         $respuesta = array('respuesta' => 'error');
     }
     echo json_encode($respuesta);
+} else if ($_POST['eliminar'] == 'eliminarPublicidad'){
+    $id = $_POST['id'];
+    $sql = "DELETE FROM publicidad WHERE id = '$id'";
+    $ejecutar = mysqli_query($conexion, $sql);
+    if ($ejecutar) {
+        $respuesta = array('respuesta' => 'exito');
+    } else {
+        $respuesta = array('respuesta' => 'error');
+    }
+    echo json_encode($respuesta);
 }

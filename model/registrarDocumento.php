@@ -18,7 +18,7 @@ if (empty($titulo)) {
     if (!is_dir($directorio)) {
         mkdir($directorio, 0755, true);
     }
-    if ($_FILES['fileDocumento']['size'] <= 4000000) {
+    if ($_FILES['fileDocumento']['size'] <= 40000000) {
         if (!in_array($extension, $formatos_permitidos)) {
             $respuesta = array('respuesta' => 'noformato');
         } else {

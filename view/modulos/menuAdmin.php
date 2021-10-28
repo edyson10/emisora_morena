@@ -55,6 +55,29 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-bullhorn"></i>
+                            <p>
+                                Publicidad
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="Registrar-publicidad" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registrar publicidad</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Ver-publicidad" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Ver publicidad</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-edit"></i>
                             <p>
                                 Noticias
@@ -146,6 +169,29 @@
                                 <a href="Ver-noticia" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Ver noticia</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-bullhorn"></i>
+                            <p>
+                                Publicidad
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="Registrar-publicidad" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Registrar publicidad</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="Ver-publicidad" class="nav-link">
+                                    <i class="far fa-circle nav-icon"></i>
+                                    <p>Ver publicidad</p>
                                 </a>
                             </li>
                         </ul>
