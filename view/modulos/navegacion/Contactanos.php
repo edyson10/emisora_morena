@@ -57,12 +57,12 @@
 
       <!-- Call to Action -->
       <section class="row tm-testimonials-cta" id="tmCallToAction">
-        <div class="col-lg-12 tm-call-to-action-col">
+        <div class="col-lg-12 tm-call-to-action-col" style="width:100%;">
           <!--<img src="view/presentacion/img/call-to-action-3.jpg" alt="Image" class="img-fluid tm-call-to-action-image" />-->
-          <div class="tm-bg-white tm-call-to-action-text text-center">
+          <div class="tm-bg-white-transparent tm-call-to-action-text text-center">
             <h2 class="tm-call-to-action-title">Donde puedes encontrarnos</h2>
             <p class="tm-call-to-action-description">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15829.91903058413!2d-72.4937971!3d7.2998713!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5aaa0be098b03b47!2sEMISORA%20COMUNITARIA%20MORENA%20STEREO!5e0!3m2!1ses-419!2sco!4v1621087920719!5m2!1ses-419!2sco" width="680" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15829.91903058413!2d-72.4937971!3d7.2998713!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5aaa0be098b03b47!2sEMISORA%20COMUNITARIA%20MORENA%20STEREO!5e0!3m2!1ses-419!2sco!4v1621087920719!5m2!1ses-419!2sco" style="border:0; width:100%;" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </p>
             <!--
             <form action="#" method="get" class="tm-call-to-action-form">
@@ -72,10 +72,8 @@
           </div>
         </div>
       </section>
-      <?php include "view/modulos/footer.php"; ?>
     </div>
     <!-- .container-fluid -->
+    <?php include "view/modulos/footer.php"; ?>
   </div>
 </body>
-
-</html>

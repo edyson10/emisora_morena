@@ -40,14 +40,18 @@
             }
 
             echo "<div class='tm-bg-white-transparent tm-testimonial-box text-center'>
-                    <div class='tm-person-img-container' onclick='verPublicidad();'>
-                      <img src='model/" . $row['ruta_imagen'] . "' alt='Image' class='img-fluid mx-auto' />
-                    </div>
-                    " . $linkFacebook . " &nbsp; " . $linkInstagram . "  
+                    <h4><strong>" . $row['titulo'] . "</strong></h4>
+                    <figure class='image push'>
+                      <img src='model/" . $row['ruta_imagen'] . "''>
+                      <figcaption style='background-color: #bdbdbd; color:white;'>
+                        " . $linkFacebook . "&nbsp;". $linkInstagram . "
+                      </figcaption>
+                    </figure>
                   </div>";
           }
           ?>
         </div>
+
       </section>
       <!-- Call to Action -->
 
@@ -73,9 +77,8 @@
         <!-- /.modal-dialog -->
       </div>
       <!-- /.modal -->
-
-      <?php include "view/modulos/footer.php"; ?>
     </div>
     <!-- .container-fluid -->
+    <?php include "view/modulos/footer.php"; ?>
   </div>
 </body>

@@ -114,8 +114,8 @@
                     <img src="view/presentacion/img/18.jpeg" width="400" height="400" />
                 </div>
             </section>
-            <?php include "view/modulos/footer.php"; ?>
         </div>
+        <?php include "view/modulos/footer.php"; ?>
         <!-- .container-fluid -->
     </div>
 </body>

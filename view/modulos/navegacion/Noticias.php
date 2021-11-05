@@ -52,8 +52,8 @@
         </div>
       </section>
       <!-- Call to Action -->
-      <?php include "view/modulos/footer.php"; ?>
     </div>
     <!-- .container-fluid -->
+    <?php include "view/modulos/footer.php"; ?>
   </div>
 </body>

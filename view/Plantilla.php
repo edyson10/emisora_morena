@@ -25,9 +25,10 @@ if (isset($_GET["ubicacion"])) {
             <!-- Slick -->
             <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick.css" />
             <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick-theme.css" />
-            <link rel="stylesheet" href="view/presentacion/css/templatemo-style.css" />
+            <link rel="stylesheet" href="view/presentacion/css/estilo.css" />
             <!-- Font Awesome -->
             <link rel="stylesheet" href="view/presentacion/admin/plugins/fontawesome-free/css/all.min.css">
+            <link rel="stylesheet" type="text/css" href="view/presentacion/slick/slick.css" />
         </head>
 
         <?php
@@ -179,6 +180,14 @@ if (isset($_GET["ubicacion"])) {
                 });
             });
         </script>
+        <script>
+            let image = document.querySelector('.image');
+            let select = document.getElementById('effect');
+
+            select.addEventListener('change', function(e) {
+              image.className = `image ${this.value}`;
+            });
+          </script>
         </body>
 
         </html>
@@ -198,7 +207,7 @@ if (isset($_GET["ubicacion"])) {
         <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>EMS 98.2 | Dashboard</title>
+            <title>EMS 98.2 | Privado</title>
             <!-- Icono pagina -->
             <link rel="icon" href="view/presentacion/img/logoemisora.png" sizes="16x16" />
             <!-- Google Font: Source Sans Pro -->
