@@ -156,7 +156,7 @@
                             </li>
                             <li class="nav-item">
                                 <div class="tm-nav-link-highlight"></div>
-                                <a class="nav-link" href="Noticias">Noticias</a>
+                                <a class="nav-link" href="Contactanos">Contáctanos</a>
                             </li>
                     <?php }
                     } ?>

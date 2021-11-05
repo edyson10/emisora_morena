@@ -293,7 +293,7 @@ function eliminarPublicidad(id) {
                     var resultado = JSON.parse(data);
                     if (resultado.respuesta == 'exito') {
                         Swal.fire(
-                            'Respuesta dada.',
+                            'Eliminado!',
                             'La publicidad ha sido eliminada.',
                             'success'
                         )
