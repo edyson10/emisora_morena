@@ -42,14 +42,14 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = $conexion->query("SELECT p.id, p.nombre, p.apellido, p.documento, r.descripcion AS rol, p.estado, p.correo FROM persona p INNER JOIN rol r ON p.rol = r.id ORDER BY p.documento, p.estado ASC");
+                                    $query = $conexion->query("SELECT p.id, p.nombre, p.apellido, p.documento, p.imagen, r.descripcion AS rol, p.estado, p.correo FROM persona p INNER JOIN rol r ON p.rol = r.id ORDER BY p.documento, p.estado ASC");
                                     while ($row = mysqli_fetch_array($query)) {
                                         if (isset($row['imagen'])) {
                                             $imagen = "model/Archivos/imagenes/personal/" . $row['imagen'];
-                                            
                                         } else {
                                             $imagen = "view/presentacion/admin/dist/img/user_1.png";
                                         }
+
                                         if ($row["estado"] == '1') {
                                             $estado = "<span class='badge badge-success'>Activo</span>";
                                         } else {
@@ -61,6 +61,7 @@
                                         } else {
                                             $botones = "";
                                         }
+
                                         echo "<tr>
                                             <td>
                                                 <div class='image'>
@@ -72,7 +73,9 @@
                                             <td>" . $row["documento"] . "</td>
                                             <td>" . $row["correo"] . "</td>
                                             <td>" . $row["rol"] . "</td>
-                                            <td>" . $estado . "</td>
+                                            <td class='text-center py-0 align-middle'>
+                                                <div class='btn-group btn-group-sm'>" . $estado . "</div>
+                                            </td>   
                                             <td class='text-center py-0 align-middle'>
                                                 <div class='btn-group btn-group-sm'>" . $botones . "</div>
                                             </td>

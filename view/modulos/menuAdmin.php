@@ -5,7 +5,6 @@
         <img src="view/presentacion/admin/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">EMS 98.2</span>
     </a>
-
     <!-- Sidebar -->
     <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
@@ -24,7 +23,6 @@
                 <a href="#" class="d-block"><?php echo $_SESSION['nombre'] . " " . $_SESSION['apellido']; ?></a>
             </div>
         </div>
-
         <!-- Sidebar Menu -->
         <nav class="mt-2">
             <?php
@@ -108,6 +106,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="Vocabulario" class="nav-link">
+                            <i class="nav-icon fas fa-angry"></i>
+                            <p>
+                                Vocabulario
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="Ver-correo" class="nav-link">
                             <i class="nav-icon fas fa-calendar-check"></i>
                             <p>
@@ -128,6 +134,14 @@
                             <i class="nav-icon fas fa-columns"></i>
                             <p>
                                 PQRS
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="Comentarios" class="nav-link">
+                            <i class="nav-icon fas fa-pen"></i>
+                            <p>
+                                Comentarios
                             </p>
                         </a>
                     </li>
@@ -204,9 +218,16 @@
                             </p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="Vocabulario" class="nav-link">
+                            <i class="nav-icon fas fa-angry"></i>
+                            <p>
+                                Vocabulario
+                            </p>
+                        </a>
+                    </li>
                 </ul>
             <?php } ?>
-
         </nav>
         <!-- /.sidebar-menu -->
     </div>

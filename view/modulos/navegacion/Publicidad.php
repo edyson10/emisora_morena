@@ -40,13 +40,14 @@
             }
 
             echo "<div class='tm-bg-white-transparent tm-testimonial-box text-center'>
-                    <h4><strong>" . $row['titulo'] . "</strong></h4>
+                    <h4><strong>" . utf8_encode($row['titulo']) . "</strong></h4>
                     <figure class='image push'>
                       <img src='model/" . $row['ruta_imagen'] . "''>
                       <figcaption style='background-color: #bdbdbd; color:white;'>
                         " . $linkFacebook . "&nbsp;". $linkInstagram . "
                       </figcaption>
                     </figure>
+                    <p><strong>" . utf8_encode($row['descripcion']) . "</strong></p>
                   </div>";
           }
           ?>

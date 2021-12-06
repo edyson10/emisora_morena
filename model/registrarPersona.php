@@ -71,7 +71,6 @@ if (
     }
 }
 
-
 echo json_encode($respuesta);
 
 mysqli_close($conexion);

@@ -28,7 +28,7 @@
             <div class="tm-bg-white-transparent tm-contact-text">
               <h3 class="tm-service-tab-title">Puedes enviarnos un correo electrónico</h3>
               <div id="list-example" class="list-group">
-                <form method="POST" id="FormEnviarCorreo" name="FormEnviarCorreo" class="tm-bg-white tm-contact-form">
+                <form method="POST" id="FormEnviarCorreo" name="FormEnviarCorreo" class="tm-bg-white tm-contact-form" enctype="multipart/form-data">
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Nombre remitente<b style="color:#FF0000">*</b></label>
                     <input type="text" id="contact_name" name="contact_name" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Nombre" style="color: black;">
@@ -44,6 +44,11 @@
                   <div class="form-group">
                     <label for="exampleFormControlInput1">Mensaje<b style="color:#FF0000">*</b></label>
                     <textarea rows="6" id="contact_message" name="contact_message" class="form-control rounded-0 border-top-0 border-right-0 border-left-0" placeholder="Mensaje" style="color: black;"></textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlInput1">Archivo adjunto<b style="color:#FF0000"> (Opcional) </b></label>
+                    <br>
+                    <input type="file" id="contact_file" name="contact_file" style="color: black;">
                   </div>
                   <div class="text-right">
                     <button type="submit" class="btn btn-outline-primary">Enviar</button>

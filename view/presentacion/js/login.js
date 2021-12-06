@@ -35,7 +35,7 @@ $(document).ready(function () {
         dataType: "json",
         type: "POST",
         beforeSend: function () {
-          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+          respuestaInfoEspera("Iniciando sesión... ¡Espere por favor!");
         },
         success: function (data) {
           if (data.respuesta == "exito") {

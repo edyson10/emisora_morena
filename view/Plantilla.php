@@ -199,7 +199,7 @@ if (isset($_GET["ubicacion"])) {
         || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Registrar-publicidad" 
         || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Ver-correo" 
         || $_GET["ubicacion"] == "Ver-noticia" || $_GET["ubicacion"] == "Ver-personal"|| $_GET["ubicacion"] == "Ver-publicidad" 
-        || $_GET["ubicacion"] == "Ver-pqrs" 
+        || $_GET["ubicacion"] == "Ver-pqrs" || $_GET["ubicacion"] == "Vocabulario" || $_GET["ubicacion"] == "Comentarios"
     ) { ?>
         <!DOCTYPE html>
         <html lang="es">

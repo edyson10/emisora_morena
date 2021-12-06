@@ -25,7 +25,7 @@ if (empty($titulo)) {
             if (move_uploaded_file($_FILES['fileDocumento']['tmp_name'], $directorio . $_FILES['fileDocumento']['name'])) {
                 $archivo_url = $directorio . $_FILES['fileDocumento']['name'];
                 $nombreImagen = $_FILES['fileDocumento']['name'];
-                $sql = $conexion->query("INSERT INTO documentacion (id, titulo, ruta_documento) VALUES (NULL, '$titulo', '$archivo_url');");
+                $sql = $conexion->query("INSERT INTO documentacion (id, titulo, ruta_documento) VALUES (NULL, '$titulo', '$archivo_url')");
 
                 if ($sql) {
                     $respuesta = array('respuesta' => 'exito');

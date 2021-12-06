@@ -25,7 +25,7 @@ $(document).ready(function () {
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Exito!",
-              "Se ha registrado correctamente el personal."
+              "Se ha registrado correctamente el usuario."
             );
             setTimeout(function () {
               window.location.href = "Ver-personal";
@@ -33,7 +33,7 @@ $(document).ready(function () {
           } else if (data.respuesta == "error") {
             respuestaError(
               "Error!",
-              "Ocurrio un error al registrar el personal"
+              "Ocurrio un error al registrar el usuario"
             );
           } else if (data.respuesta == "noformato") {
             respuestaError(
@@ -162,6 +162,8 @@ $(document).ready(function () {
   $("#FormRegistrarProgramacion").validate({
     rules: {
       nombreProgramacion: { required: true },
+      fechaProgramacion: { required: true, date: true },
+      horaProgramacion: { required: true } 
     },
     messages: {
       nombreProgramacion: { required: "Debe de completar los campos." },
@@ -170,8 +172,7 @@ $(document).ready(function () {
         date: "Seleccione una fecha correcta.",
       },
       horaProgramacion: {
-        required: "Debe de completar los campos.",
-        date: "Seleccione una hora correcta.",
+        required: "Debe de completar los campos."
       },
     },
     errorElement: "span",
@@ -202,15 +203,12 @@ $(document).ready(function () {
         },
         success: function (data) {
           if (data.respuesta == "exito") {
-            ingresoExitoso(
-              "Exito!",
-              "Se registro correctamente la programación."
-            );
+            ingresoExitoso("Exito!", "Se registro correctamente la programación.");
             setTimeout(function () {
               location.reload();
             }, 1000);
           } else {
-            respuestaError("Error!", "Ocurrio un error al registrar.");
+            respuestaError("Error!", "Ocurrio un error al registrar la mala palabra.");
           }
         },
       });
@@ -436,5 +434,56 @@ $(document).ready(function () {
         },
       });
     }
+  });
+});
+
+/*
+METODO PARA REGISTRAR VOCABULARIO
+(MALA PALABRA)
+*/
+$(document).ready(function () {
+  $("#FormRegistrarVocabulario").validate({
+    rules: {
+      vocabulario: { required: true },
+    },
+    messages: {
+      vocabulario: { required: "Debe de completar los campos." },
+    },
+    errorElement: "span",
+    errorPlacement: function (error, element) {
+      error.addClass("invalid-feedback");
+      element.closest(".form-group").append(error);
+    },
+    highlight: function (element, errorClass, validClass) {
+      $(element).addClass("is-invalid");
+    },
+    unhighlight: function (element, errorClass, validClass) {
+      $(element).removeClass("is-invalid");
+    },
+    submitHandler: function () {
+      var datos = {
+        vocabulario: $("#vocabulario").val(),
+      };
+      $.ajax({
+        url: "model/registrarVocabulario.php",
+        method: "post",
+        data: datos,
+        dataType: "json",
+        type: "POST",
+        beforeSend: function () {
+          respuestaInfoEspera("Registrando... ¡Espere por favor!");
+        },
+        success: function (data) {
+          if (data.respuesta == "exito") {
+            ingresoExitoso("Exito!", "Se registro correctamente la mala palabra.");
+            setTimeout(function () {
+              location.reload();
+            }, 1000);
+          } else {
+            respuestaError("Error!", "Ocurrio un error al registrar la mala palabra.");
+          }
+        },
+      });
+    },
   });
 });

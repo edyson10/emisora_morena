@@ -107,7 +107,7 @@
                     <div class="tm-bg-white tm-call-to-action-text">
                         <h2 class="tm-call-to-action-title">Dejanos tu comentario</h2>
                         <form class="tm-call-to-action-form" method="POST" id="FormEnviarComentario" name="FormEnviarComentario">
-                            <input type="email" class="tm-email-input" name="comentario" id="comentario" placeholder="Envia un comentario" />
+                            <input type="text" class="tm-email-input" name="comentario" id="comentario" placeholder="Envia un comentario" />
                             <button type="submit" class="btn btn-secondary">Enviar</button>
                         </form>
                     </div>
