@@ -33,6 +33,7 @@
                                     <tr>
                                         <th>Comentario</th>
                                         <th>Fecha</th>
+                                        <th>Acci&oacute;n</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -42,6 +43,11 @@
                                         echo "<tr>
                                             <td>" . utf8_encode($row["descripcion"]) . "</td>
                                             <td>" . $row["fecha_comentario"] . "</td>
+                                            <td class='text-center py-0 align-middle'>
+                                                <div class='btn-group btn-group-sm'>
+                                                    <a class='btn btn-danger' onclick='eliminarComentario(" . $row["id"] . ")'><i class='fas fa-trash'></i></a>
+                                                </div>
+                                            </td>
                                         </tr>";
                                     }
                                     ?>
