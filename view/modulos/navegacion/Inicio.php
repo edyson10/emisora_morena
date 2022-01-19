@@ -52,7 +52,8 @@
                                     <tbody class="table-light">
                                         <?php
                                         $query = $conexion->query("SELECT * FROM comentario WHERE DATE_FORMAT(fecha_comentario, '%Y-%m-%d') = CURDATE() ORDER BY fecha_comentario ASC");
-                                        for ($censuradas = array(); $row = $query->fetch_assoc(); $censuradas[] = $row['descripcion']);
+                                        $result = $conexion->query("SELECT * FROM vocabulario"); 
+                                        for ($censuradas = array(); $row = $result->fetch_assoc(); $censuradas[] = $row['descripcion']);
                                         $partes = count($censuradas);
                                         $id = 1;
                                         while ($row = mysqli_fetch_array($query)) {
