@@ -36,10 +36,9 @@
                 </div>
             </section>
 
-            
+
             <section class="row" id="tmHome">
                 <div class="col-12 tm-home-container">
-                    
                     <div class="tm-home-right">
                         <div class="tm-bg-white-transparent tm-contact-text">
                             <h3 class="tm-service-tab-title">Comentarios</h3>
@@ -52,17 +51,17 @@
                                     </thead>
                                     <tbody class="table-light">
                                         <?php
-                                        $query = $conexion->query("SELECT * FROM programacion WHERE DATE_FORMAT(fecha_hora, '%Y-%m-%d') = CURDATE() ORDER BY fecha_hora ASC");
-                                        for ($censuradas = array (); $row = $result->fetch_assoc(); $censuradas[] = $row['descripcion']);
+                                        $query = $conexion->query("SELECT * FROM comentario WHERE DATE_FORMAT(fecha_comentario, '%Y-%m-%d') = CURDATE() ORDER BY fecha_comentario ASC");
+                                        for ($censuradas = array(); $row = $query->fetch_assoc(); $censuradas[] = $row['descripcion']);
                                         $partes = count($censuradas);
                                         $id = 1;
                                         while ($row = mysqli_fetch_array($query)) {
                                             $frasecompleta = utf8_encode($row['descripcion']);
-                                            for ($i = 0; $i < $partes; $i++) { 
-                                                if( strpos($frasecompleta, $censuradas[$i]) !== false ){
+                                            for ($i = 0; $i < $partes; $i++) {
+                                                if (strpos($frasecompleta, $censuradas[$i]) !== false) {
                                                     //Replazamos las prohibidas con ****
-                                                    $frasecompleta = str_replace($censuradas[$i],' **** ', $frasecompleta);
-                                                } 
+                                                    $frasecompleta = str_replace($censuradas[$i], ' **** ', $frasecompleta);
+                                                }
                                             }
                                             echo "<tr>
                                                     <td>" . $frasecompleta . "</td>
