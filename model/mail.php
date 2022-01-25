@@ -10,7 +10,7 @@ try {
         $correo = $_POST['contact_email'];
         $mensaje = $_POST['contact_message'];
         
-        $to = 'edysonleal3@gmail.com';
+        $to = 'morenastereolabateca@gmail.com';
         $subject = $asunto;
         $cabeceras = 'MIME-Version: 1.0' . "\r\n";
         $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";

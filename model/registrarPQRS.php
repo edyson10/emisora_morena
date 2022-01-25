@@ -15,10 +15,21 @@ $descripcion = $_POST['descripcionPQRS'];
 $sql = $conexion->query("INSERT INTO pqrs (id, tipo, nombre, telefono, email, descripcion) VALUES (NULL, '$tipo', '$nombre', '$numero', '$correo', '$descripcion')");
 
 if ($sql) {
-    $to = "edysonleal3@gmail.com";
+
+    if ($tipo == 1) {
+        $nombreTipo = "Petición";
+    } else if ($tipo == 2) {
+        $nombreTipo = "Queja";
+    } else if($tipo == 3) {
+        $nombreTipo = "Reclamo";
+    } else if ($tipo == 4) {
+        $nombreTipo = "Sugerencia";
+    }
+
+    $to = "morenastereolabateca@gmail.com";
     $cabeceras = 'MIME-Version: 1.0' . "\r\n";
     $cabeceras .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-    $subject = $tipo . ' ' . $nombre;
+    $subject = $nombreTipo . ' ' . $nombre;
     $message = '<table style="padding:50px 0;background:url("
                 https://doc-08-ac-docs.googleusercontent.com/docs/securesc/p3fjatsoacqobijbtec8t93ok5b89q7p/bt1d3no2lbei2i43gqghv2qvmsnhie0n/1614972450000/10963207390854114534/17700326816645748306/1usNb70qb6FvQI5D8H_Rf6OwMlv0z_M3-?authuser=0")"
                 width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
@@ -87,7 +98,7 @@ if ($sql) {
                                                             width="80%" valign="top" align="justify">
                                                             <p>Hola soy, ' . $nombre . ':</p>
                                                             <p>
-                                                                Mi solicitud es: ' . $descripcion .'
+                                                                Mi ' . $nombreTipo . ' es: ' . $descripcion .'
                                                             </p>
                                                             <p><strong>Mi correo para cualquier inquietud es: ' . $correo . ' y mi número de contacto es: ' . $numero . '</strong></p>
                                                         </td>
