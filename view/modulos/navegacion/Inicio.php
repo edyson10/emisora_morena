@@ -39,42 +39,7 @@
 
             <section class="row" id="tmHome">
                 <div class="col-12 tm-home-container">
-                    <div class="tm-home-right">
-                        <div class="tm-bg-white-transparent tm-contact-text">
-                            <h3 class="tm-service-tab-title">Comentarios</h3>
-                            <div id="list-example" class="list-group">
-                                <table class="table">
-                                    <thead class="table-primary">
-                                        <tr>
-                                            <th scope="col">Descripci&oacute;n</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-light">
-                                        <?php
-                                        $query = $conexion->query("SELECT * FROM comentario WHERE DATE_FORMAT(fecha_comentario, '%Y-%m-%d') = CURDATE() ORDER BY fecha_comentario ASC");
-                                        $result = $conexion->query("SELECT * FROM vocabulario"); 
-                                        for ($censuradas = array(); $row = $result->fetch_assoc(); $censuradas[] = $row['descripcion']);
-                                        $partes = count($censuradas);
-                                        $id = 1;
-                                        while ($row = mysqli_fetch_array($query)) {
-                                            $frasecompleta = utf8_encode($row['descripcion']);
-                                            for ($i = 0; $i < $partes; $i++) {
-                                                if (strpos($frasecompleta, $censuradas[$i]) !== false) {
-                                                    //Replazamos las prohibidas con ****
-                                                    $frasecompleta = str_replace($censuradas[$i], ' **** ', $frasecompleta);
-                                                }
-                                            }
-                                            echo "<tr>
-                                                    <td>" . $frasecompleta . "</td>
-                                                </tr>";
-                                            $id++;
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+
 
                     <div class="col-lg-6 tm-contact-col-right">
                         <div class="tm-bg-white-transparent tm-contact-text">
@@ -107,6 +72,54 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </section>
+
+            <section>
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <div class="tm-home-right">
+                            <div class="tm-bg-white-transparent tm-contact-text">
+                                <h3 class="tm-service-tab-title">Comentarios</h3>
+                                <div id="list-example" class="list-group">
+                                    <table class="table">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">Descripci&oacute;n</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-light">
+                                            <?php
+                                            $query = $conexion->query("SELECT * FROM comentario WHERE DATE_FORMAT(fecha_comentario, '%Y-%m-%d') = CURDATE() ORDER BY fecha_comentario ASC");
+                                            $result = $conexion->query("SELECT * FROM vocabulario");
+                                            for ($censuradas = array(); $row = $result->fetch_assoc(); $censuradas[] = $row['descripcion']);
+                                            $partes = count($censuradas);
+                                            $id = 1;
+                                            while ($row = mysqli_fetch_array($query)) {
+                                                $frasecompleta = utf8_encode($row['descripcion']);
+                                                for ($i = 0; $i < $partes; $i++) {
+                                                    if (strpos($frasecompleta, $censuradas[$i]) !== false) {
+                                                        //Replazamos las prohibidas con ****
+                                                        $frasecompleta = str_replace($censuradas[$i], ' **** ', $frasecompleta);
+                                                    }
+                                                }
+                                                echo "<tr>
+                                                    <td><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
+                                                    <path d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z'/>
+                                                  </svg> " . $frasecompleta . "</td>
+                                                </tr>";
+                                                $id++;
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4"></div>
+
                 </div>
             </section>
 

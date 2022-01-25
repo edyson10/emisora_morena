@@ -26,7 +26,7 @@
                 <a href="" class="h1"><b>Administraci&oacute;n</a>
             </div>
             <div class="card-body">
-                <p class="login-box-msg">¿Olvidaste tu contraseña? Aquí puede recuperar fácilmente una nueva contraseña.</p>
+                <p class="login-box-msg">¿Olvidó su contraseña? Aquí puede solicitar fácilmente una nueva contraseña.</p>
                 <form name="FormRecuperarPass" id="FormRecuperarPass" method="POST">
                     <div class="input-group mb-3">
                         <input type="email" name="emailForgot" id="emailForgot" class="form-control" placeholder="Ingrese su correo">

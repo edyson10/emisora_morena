@@ -24,7 +24,7 @@ $(document).ready(function () {
         success: function (data) {
           if (data.respuesta == "exito") {
             ingresoExitoso(
-              "¡Exito!",
+              "¡Éxito!",
               "Se ha registrado correctamente el usuario."
             );
             setTimeout(function () {
@@ -92,7 +92,7 @@ $(document).ready(function () {
         },
         success: function (data) {
           if (data.respuesta == "exito") {
-            ingresoExitoso("Exito!", "Se registro correctamente el rol.");
+            ingresoExitoso("Éxito!", "Se registro correctamente el rol.");
             setTimeout(function () {
               location.reload();
             }, 1000);
@@ -134,7 +134,7 @@ $(document).ready(function () {
         success: function (data) {
           if (data.respuesta == "exito") {
             ingresoExitoso(
-              "¡Exito!",
+              "¡Éxito!",
               "Se ha registrado correctamente la noticia."
             );
             setTimeout(function () {
@@ -203,7 +203,7 @@ $(document).ready(function () {
         },
         success: function (data) {
           if (data.respuesta == "exito") {
-            ingresoExitoso("Exito!", "Se registro correctamente la programación.");
+            ingresoExitoso("Éxito!", "Se registro correctamente la programación.");
             setTimeout(function () {
               location.reload();
             }, 1000);
@@ -274,7 +274,7 @@ $(document).ready(function () {
         },
         success: function (data) {
           if (data.respuesta == "exito") {
-            ingresoExitoso("Exito!", "Se envio correctamente su PQRS.");
+            ingresoExitoso("Éxito!", "Se envio correctamente su PQRS.");
             setTimeout(function () {
               location.reload();
             }, 1000);
@@ -324,7 +324,7 @@ $(document).ready(function () {
         },
         success: function (data) {
           if (data.respuesta == "exito") {
-            ingresoExitoso("Exito!", "Se envio correctamente su comentario.");
+            ingresoExitoso("¡Éxito!", "Se envio correctamente su comentario.");
             setTimeout(function () {
               location.reload();
             }, 1000);
@@ -366,7 +366,7 @@ $(document).ready(function () {
         success: function (data) {
           if (data.respuesta == "exito") {
             ingresoExitoso(
-              "¡Exito!",
+              "¡Éxito!",
               "Se ha subido correctamente el documento."
             );
             setTimeout(function () {
@@ -416,7 +416,7 @@ $(document).ready(function () {
         success: function (data) {
           if (data.respuesta == "exito") {
             ingresoExitoso(
-              "¡Exito!",
+              "¡Éxito!",
               "Se ha registrado correctamente la publicidad."
             );
             setTimeout(function () {
@@ -475,7 +475,7 @@ $(document).ready(function () {
         },
         success: function (data) {
           if (data.respuesta == "exito") {
-            ingresoExitoso("Exito!", "Se registro correctamente la mala palabra.");
+            ingresoExitoso("¡Éxito!", "Se registro correctamente la mala palabra.");
             setTimeout(function () {
               location.reload();
             }, 1000);

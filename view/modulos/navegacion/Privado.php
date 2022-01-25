@@ -79,7 +79,7 @@ if (isset($_SESSION['rol'])) {
                 <!-- /.social-auth-links -->
                 <br>
                 <p class="mb-1">
-                    <a href="Recuperar-contraseña">¿Olvidaste su contraseña?</a>
+                    <a href="Recuperar-contraseña">¿Olvidó su contraseña?</a>
                 </p>
             </div>
             <!-- /.card-body -->
