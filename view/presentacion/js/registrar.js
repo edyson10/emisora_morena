@@ -225,7 +225,7 @@ $(document).ready(function () {
       tipoPQRS: { required: true },
       nombrePQRS: { required: true },
       numeroPQRS: { required: true, number: true },
-      correoPQRS: { required: true },
+      correoPQRS: { required: true, email: true },
       descripcionPQRS: { required: true },
     },
     messages: {
