@@ -219,6 +219,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="Comentarios" class="nav-link">
+                            <i class="nav-icon fas fa-pen"></i>
+                            <p>
+                                Comentarios
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="Vocabulario" class="nav-link">
                             <i class="nav-icon fas fa-angry"></i>
                             <p>

@@ -145,7 +145,7 @@ $(document).ready(function () {
           } else if (data.respuesta == "error") {
             respuestaError("Error!", "Error al subir la noticia.");
           } else if (data.respuesta == "noformato") {
-            respuestaError("Error!", "Debe de elegir una foto con extensión .jpg, .jpeg, .png.");
+            respuestaError("Error!", "Debe de elegir una foto con extensión jpg, jpeg o png.");
           } else if (data.respuesta == "notamano") {
             respuestaError("Error!", "Debe de elegir un tamaño menor a 40MB.");
           }
@@ -388,7 +388,7 @@ $(document).ready(function () {
 });
 
 /*
-METODO PARA REGISTRAR NOTICIA
+METODO PARA REGISTRAR PUBLICIDAD
 */
 $(document).ready(function () {
   $("#FormRegistroPublicidad").on("submit", function (e) {

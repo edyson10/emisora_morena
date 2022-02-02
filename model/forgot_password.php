@@ -89,7 +89,7 @@ try {
                                                             <p>Hola, ' . $nombre . ':</p>
                                                             <p>
                                                                 Recientemente, solicit&oacute; el cambio de su contrase&ntilde;a
-                                                                de tu cuenta en la plataforma de la Emisora Morena Stereo.<br>
+                                                                de su cuenta en la plataforma de la Emisora Morena Stereo.<br>
                                                                 Si solicitaste el cambio, esta es su nueva contrase&ntilde;a.
                                                             </p>
                                                             <p><strong>Su nueva contrase&ntilde;a es: ' . $pass . '</strong></p>

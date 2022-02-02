@@ -36,11 +36,8 @@
                 </div>
             </section>
 
-
             <section class="row" id="tmHome">
                 <div class="col-12 tm-home-container">
-
-
                     <div class="col-lg-6 tm-contact-col-right">
                         <div class="tm-bg-white-transparent tm-contact-text">
                             <h3 class="tm-service-tab-title">Programaci&oacute;n del d&iacute;a</h3>
@@ -77,8 +74,8 @@
 
             <section>
                 <div class="row">
-                    <div class="col-md-4"></div>
-                    <div class="col-md-4">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
                         <div class="tm-home-right">
                             <div class="tm-bg-white-transparent tm-contact-text">
                                 <h3 class="tm-service-tab-title">Comentarios</h3>
@@ -118,23 +115,27 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4"></div>
-
+                    <div class="col-md-1"></div>
                 </div>
             </section>
 
             <!-- Call to Action -->
             <section class="row" id="tmCallToAction">
-                <div class="col-lg-12 tm-call-to-action-col">
-                    <div class="tm-bg-white tm-call-to-action-text">
-                        <h2 class="tm-call-to-action-title">Dejanos tu comentario</h2>
-                        <form class="tm-call-to-action-form" method="POST" id="FormEnviarComentario" name="FormEnviarComentario">
-                            <input type="text" class="tm-email-input" name="comentario" id="comentario" placeholder="Envia un comentario" />
-                            <button type="submit" class="btn btn-secondary">Enviar</button>
-                        </form>
+                <div class="col-md-1"></div>
+                <div class="col-md-10">
+                    <div class="tm-call-to-action-col" style="padding-bottom: -200% !important">
+                        <div class="tm-bg-white tm-call-to-action-text">
+                            <h2 class="tm-call-to-action-title">Dejanos tu comentario</h2>
+                            <form class="tm-call-to-action-form" method="POST" id="FormEnviarComentario" name="FormEnviarComentario">
+                                <input type="text" class="tm-email-input" name="comentario" id="comentario" placeholder="Envia un comentario"/>
+                                <button type="submit" class="btn btn-secondary">Enviar</button>
+                            </form>
+                        </div>
+                        <img src="view/presentacion/img/18.jpeg" width="400" height="400" />
                     </div>
-                    <img src="view/presentacion/img/18.jpeg" width="400" height="400" />
                 </div>
+                <div class="col-md-1"></div>
+
             </section>
         </div>
         <?php include "view/modulos/footer.php"; ?>

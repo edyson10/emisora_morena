@@ -51,7 +51,7 @@ if (isset($_GET["ubicacion"])) {
         <script src="view/presentacion/js/registrar.js"></script>
         <script src="view/presentacion/js/eliminar.js"></script>
         <script src="view/presentacion/js/ver.js"></script>
-        
+
         <script>
             $(function() {
                 $('.tabgroup > div').hide();
@@ -185,9 +185,9 @@ if (isset($_GET["ubicacion"])) {
             let select = document.getElementById('effect');
 
             select.addEventListener('change', function(e) {
-              image.className = `image ${this.value}`;
+                image.className = `image ${this.value}`;
             });
-          </script>
+        </script>
         </body>
 
         </html>
@@ -195,10 +195,10 @@ if (isset($_GET["ubicacion"])) {
         include_once 'model/conexion.php';
         include "modulos/navegacion/" . $_GET["ubicacion"] . ".php";
     } else if (
-        $_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Documentacion"  ||  $_GET["ubicacion"] == "Programacion-dia" 
-        || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Registrar-publicidad" 
-        || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Ver-correo" 
-        || $_GET["ubicacion"] == "Ver-noticia" || $_GET["ubicacion"] == "Ver-personal"|| $_GET["ubicacion"] == "Ver-publicidad" 
+        $_GET["ubicacion"] == "Administracion" || $_GET["ubicacion"] == "Documentacion"  ||  $_GET["ubicacion"] == "Programacion-dia"
+        || $_GET["ubicacion"] == "Registrar-noticia" || $_GET["ubicacion"] == "Registrar-personal" || $_GET["ubicacion"] == "Registrar-publicidad"
+        || $_GET["ubicacion"] == "Rol" || $_GET["ubicacion"] == "Salir" || $_GET["ubicacion"] == "Sesion" || $_GET["ubicacion"] == "Ver-correo"
+        || $_GET["ubicacion"] == "Ver-noticia" || $_GET["ubicacion"] == "Ver-personal" || $_GET["ubicacion"] == "Ver-publicidad"
         || $_GET["ubicacion"] == "Ver-pqrs" || $_GET["ubicacion"] == "Vocabulario" || $_GET["ubicacion"] == "Comentarios"
     ) { ?>
         <!DOCTYPE html>
@@ -236,6 +236,8 @@ if (isset($_GET["ubicacion"])) {
             <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
             <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
             <link rel="stylesheet" href="view/presentacion/admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
 
         </head>
 
@@ -309,6 +311,8 @@ if (isset($_GET["ubicacion"])) {
             <!-- bs-custom-file-input -->
             <script src="view/presentacion/admin/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+
             <script src="view/presentacion/js/alertas.js"></script>
             <script src="view/presentacion/js/sweetalert2.min.js"></script>
 
@@ -348,6 +352,45 @@ if (isset($_GET["ubicacion"])) {
                         "responsive": true,
                     });
                 });
+            </script>
+            <script>
+                var base_url = 'fake_url';
+                var timeout;
+                document.onmousemove = function() {
+                    clearTimeout(timeout);
+                    contadorSesion(); //aqui cargamos la funcion de inactividad
+                }
+
+                function contadorSesion() {
+                    timeout = setTimeout(function() {
+                        $.confirm({
+                            title: 'Alerta de Inactividad!',
+                            content: 'La sesión esta a punto de expirar.',
+                            autoClose: 'expirar|10000', //cuanto tiempo necesitamos para cerrar la sesión automaticamente
+                            type: 'red',
+                            icon: 'fa fa-spinner fa-spin',
+                            buttons: {
+                                expirar: {
+                                    text: 'Cerrar Sesión',
+                                    btnClass: 'btn-red',
+                                    action: function() {
+                                        salir();
+                                    }
+                                },
+                                permanecer: function() {
+                                    contadorSesion(); //reinicia el conteo
+                                    $.alert('La Sesión ha sido reiniciada!'); //mensaje
+                                    //window.location.href = base_url + "dashboard";
+                                }
+                            }
+                        });
+                    }, 60000); //
+                }
+
+                function salir() {
+                    //console.log("Se ha cerrado la sesión")
+                    window.location.href = "Salir"; //esta función te saca
+                }
             </script>
         </body>
 
