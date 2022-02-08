@@ -36,43 +36,53 @@
                 </div>
             </section>
 
-            <section class="row" id="tmHome">
-                <div class="col-12 tm-home-container">
-                    <div class="col-lg-6 tm-contact-col-right">
-                        <div class="tm-bg-white-transparent tm-contact-text">
-                            <h3 class="tm-service-tab-title">Programaci&oacute;n del d&iacute;a</h3>
-                            <div id="list-example" class="list-group">
-                                <table class="table">
-                                    <thead class="table-primary">
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Nombre</th>
-                                            <th scope="col">Hora</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="table-light">
-                                        <?php
-                                        $query = $conexion->query("SELECT * FROM programacion WHERE DATE_FORMAT(fecha_hora, '%Y-%m-%d') = CURDATE() ORDER BY fecha_hora ASC");
-                                        $id = 1;
-                                        while ($row = mysqli_fetch_array($query)) {
-                                            $horario = explode(" ", $row["fecha_hora"]);
-                                            echo "<tr>
+            <section  id="tmHome">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <div class="tm-home-right">
+                            <div class="tm-bg-white-transparent tm-contact-text">
+                                <h3 class="tm-service-tab-title">Programaci&oacute;n del d&iacute;a</h3>
+                                <div id="list-example" class="list-group">
+                                    <table class="table">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Hora</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="table-light">
+                                            <?php
+                                            $query = $conexion->query("SELECT * FROM programacion WHERE DATE_FORMAT(fecha_hora, '%Y-%m-%d') = CURDATE() ORDER BY fecha_hora ASC");
+                                            $id = 1;
+                                            while ($row = mysqli_fetch_array($query)) {
+                                                $horario = explode(" ", $row["fecha_hora"]);
+                                                $hora = explode(":", $horario[1]);
+                                                if ($hora[0] >= 13) {
+                                                    $time = ($hora[0] - 12) . ":" . $hora[1] . "PM";
+                                                } else {
+                                                    $time = $hora[0] . ":" . $hora[1] . "AM";
+                                                }
+                                                echo "<tr>
                                                     <th scope='row'>" . $id . "</th>
-                                                    <td>" . $row["nombre"] . "</td>
-                                                    <td>" . $horario[1] . "</td>
+                                                    <td>" . utf8_encode($row["nombre"]) . "</td>
+                                                    <td>" . $time . "</td>
                                                 </tr>";
-                                            $id++;
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
+                                                $id++;
+                                            }
+                                            ?>
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-2"></div>
                 </div>
             </section>
 
-            <section>
+            <section  id="tmHome">
                 <div class="row">
                     <div class="col-md-1"></div>
                     <div class="col-md-10">
@@ -102,8 +112,9 @@
                                                     }
                                                 }
                                                 echo "<tr>
-                                                    <td><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person' viewBox='0 0 16 16'>
-                                                    <path d='M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z'/>
+                                                    <td><svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-person-fill' viewBox='0 0 16 16'>
+                                                    <path d='M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'/>
+                                                  </svg>
                                                   </svg> " . $frasecompleta . "</td>
                                                 </tr>";
                                                 $id++;
@@ -118,16 +129,16 @@
                     <div class="col-md-1"></div>
                 </div>
             </section>
-
+            
             <!-- Call to Action -->
-            <section class="row" id="tmCallToAction">
+            <section class="row" id="tmHome">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <div class="tm-call-to-action-col" style="padding-bottom: -200% !important">
                         <div class="tm-bg-white tm-call-to-action-text">
                             <h2 class="tm-call-to-action-title">Dejanos tu comentario</h2>
                             <form class="tm-call-to-action-form" method="POST" id="FormEnviarComentario" name="FormEnviarComentario">
-                                <input type="text" class="tm-email-input" name="comentario" id="comentario" placeholder="Envia un comentario"/>
+                                <input type="text" class="tm-email-input" name="comentario" id="comentario" placeholder="Envia un comentario" />
                                 <button type="submit" class="btn btn-secondary">Enviar</button>
                             </form>
                         </div>

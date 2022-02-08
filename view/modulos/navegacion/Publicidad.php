@@ -43,7 +43,7 @@
                     <h4><strong>" . utf8_encode($row['titulo']) . "</strong></h4>
                     <figure class='image push'>
                       <img src='model/" . $row['ruta_imagen'] . "''>
-                      <figcaption style='background-color: #bdbdbd; color:white;'>
+                      <figcaption style='background-color: #aac4fc; color:white;'>
                         " . $linkFacebook . "&nbsp;". $linkInstagram . "
                       </figcaption>
                     </figure>

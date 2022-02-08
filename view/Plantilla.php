@@ -384,7 +384,7 @@ if (isset($_GET["ubicacion"])) {
                                 }
                             }
                         });
-                    }, 60000); //
+                    }, 300000); //
                 }
 
                 function salir() {
