@@ -4,8 +4,6 @@ require_once 'conexion.php';
 
 $conexion->query("SET NAMES 'UTF8' ");
 
-//die(json_encode($_POST));
-
 $tipo = $_POST['tipoPQRS'];
 $nombre = $_POST['nombrePQRS'];
 $numero = $_POST['numeroPQRS'];

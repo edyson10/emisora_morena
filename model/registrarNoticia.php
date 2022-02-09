@@ -4,8 +4,6 @@ require_once 'conexion.php';
 
 $conexion->query("SET NAMES 'UTF8' ");
 
-die(json_encode($_FILES));
-
 $titulo = $_POST['tituloNoticia'];
 $descripcion = $_POST['descripcionNoticia'];
 $fecha = $_POST['fechaNoticia'];
@@ -26,26 +24,29 @@ if (empty($titulo) || empty($descripcion)) {
     $tamano = $_FILES['fotoNoticia']['size'];
     $temp = $_FILES['fotoNoticia']['tmp_name'];
 
-    if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
+    if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 4000000))) {
         $respuesta = array('respuesta' => 'noformato');
     } else {
         //Si la imagen es correcta en tamaño y tipo
         //Se intenta subir al servidor
-        if (move_uploaded_file($temp, 'images/' . $archivo)) {
+        if (move_uploaded_file($temp, $directorio . $archivo)) {
             //Cambiamos los permisos del archivo a 777 para poder modificarlo posteriormente
-            chmod('images/' . $archivo, 0777);
-            //Mostramos el mensaje de que se ha subido co éxito
-            //echo '<div><b>Se ha subido correctamente la imagen.</b></div>';
-            $respuesta = array('respuesta' => 'exito');
-            //Mostramos la imagen subida
-            //echo '<p><img src="images/' . $archivo . '"></p>';
+            chmod($directorio . $archivo, 0777);
+            $archivo_url =  $directorio . $archivo;
+            $sql = $conexion->query("INSERT INTO noticia (id, ruta_imagen, imagen, titulo, descripcion, fecha, lugar, link) VALUES (NULL, '$archivo_url', '$archivo', '$titulo', '$descripcion', '$fecha', '$lugar', '$link')");
+
+            if ($sql) {
+                //Mostramos el mensaje de que se ha subido con éxito
+                $respuesta = array('respuesta' => 'exito');
+            } else {
+                $respuesta = array('respuesta' => 'error');
+            }
         } else {
-            //Si no se ha podido subir la imagen, mostramos un mensaje de error
-            //echo '<div><b>Ocurrió algún error al subir el fichero. No pudo guardarse.</b></div>';
             $respuesta = array('respuesta' => 'error');
         }
     }
 
+    /*
     if ($_FILES['fotoNoticia']['size'] <= 400000000) {
         if (($_FILES["fotoNoticia"]["type"] == "image/gif")
             || ($_FILES["fotoNoticia"]["type"] == "image/jpeg")
@@ -71,7 +72,7 @@ if (empty($titulo) || empty($descripcion)) {
         }
     } else {
         $respuesta = array('respuesta' => 'notamano');
-    }
+    }*/
 }
 
 echo json_encode($respuesta);

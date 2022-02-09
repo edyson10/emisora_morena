@@ -2,14 +2,12 @@
 
 require_once 'conexion.php';
 
-//die(json_encode($_POST));
 try {
     if (!empty($_POST['emailForgot'])) {
         $pass = substr(md5(microtime()), 1, 10);
         $correo = $_POST['emailForgot'];
         $query = $conexion->query("SELECT * FROM persona WHERE correo = '$correo'");
         $row = mysqli_fetch_array($query);
-        //die(json_encode($row['documento']));
         
         if ($row > 0) {
             $sql = "UPDATE persona SET contrasena = '$pass' WHERE correo = '$correo'";

@@ -132,6 +132,7 @@ $(document).ready(function () {
           respuestaInfoEspera("Registrando... ¡Espere por favor!");
         },
         success: function (data) {
+          console.log(data);
           if (data.respuesta == "exito") {
             ingresoExitoso(
               "¡Éxito!",

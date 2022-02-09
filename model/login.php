@@ -2,8 +2,6 @@
 
 require_once 'conexion.php';
 
-//die(json_encode($_POST));
-
 $identificacion = $_POST['ingresarCorreo'];
 $contraseña = $_POST['ingresarContrasena'];
 $tipo = $_POST['ingresarTipo'];

@@ -1,6 +1,5 @@
 <?php
 
-
 require_once 'conexion.php';
 
 $conexion->query("SET NAMES 'UTF8' ");

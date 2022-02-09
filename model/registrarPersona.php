@@ -4,8 +4,6 @@ require_once 'conexion.php';
 
 $conexion->query("SET NAMES 'UTF8' ");
 
-//die(json_encode($_POST));
-
 $nombre = $_POST['nombrePersonal'];
 $apellido = $_POST['apellidoPersonal'];
 $tipo_documento = $_POST['tipoDocumentoPersonal'];

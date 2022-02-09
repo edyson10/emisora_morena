@@ -4,8 +4,6 @@ require_once 'conexion.php';
 
 $conexion->query("SET NAMES 'UTF8' ");
 
-//die(json_encode($_POST));
-
 date_default_timezone_set('America/Bogota');
 
 $comentario = $_POST['comentario'];

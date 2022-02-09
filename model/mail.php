@@ -2,7 +2,6 @@
 
 require_once 'conexion.php';
 
-//die(json_encode($_POST));
 try {
     if (!empty($_POST['contact_name']) && !empty($_POST['contact_email']) && !empty($_POST['contact_message']) && !empty($_POST['contact_asunt'])) {
         $nombre = $_POST['contact_name'];

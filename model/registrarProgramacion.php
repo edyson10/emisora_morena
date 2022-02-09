@@ -4,8 +4,6 @@ require_once 'conexion.php';
 
 $conexion->query("SET NAMES 'UTF8' ");
 
-//die(json_encode($_POST));
-
 $nombre = $_POST['nombreProgramacion'];
 $fecha = $_POST['fechaProgramacion'];
 $hora = $_POST['horaProgramacion'];

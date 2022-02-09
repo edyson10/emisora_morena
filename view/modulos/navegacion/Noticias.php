@@ -36,14 +36,14 @@
             if (empty($row[5]) || $row[5] == NULL || $row[5] == '0000-00-00') {
               $date = "";
             } else {
-              $date = "<p class='tm-about-description'> En " . utf8_encode($row[6]) . ' el día ' . utf8_encode($row[5]) . "</p>";
+              $date = "<p><strong>Lugar y fecha:</strong></p><p class='tm-about-description'> En " . utf8_encode($row[6]) . ' el día ' . utf8_encode($row[5]) . "</p>";
             }
 
             echo " <div class='tm-bg-white-transparent tm-testimonial-box text-center'>
                     <div class='tm-person-img-container'>
                       <img src='model/" . $row[1] . "' alt='Image' class='img-fluid mx-auto' />
                     </div>
-                    <h5 class='tm-about-name tm-uppercase' style='color:#000000'>" . utf8_encode($row[3]) . "</h5>
+                    <h5 class='tm-about-name tm-uppercase' style='color:#000000'><strong>" . utf8_encode($row[3]) . "</strong></h5>
                     <p class='tm-about-description'>" . utf8_encode($row[4]) . "</p><br>
                     " . $link . $date . " 
                     </div>";
